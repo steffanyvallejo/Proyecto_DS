@@ -18,7 +18,6 @@ public class Responsability {
 	 */
 	public void setNextResponsability() {
 		// TODO implement here
-		return null;
 	}
 
 	/**
@@ -26,7 +25,6 @@ public class Responsability {
 	 */
 	public void registrarTransacción() {
 		// TODO implement here
-		return null;
 	}
 
 }

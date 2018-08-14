@@ -29,7 +29,7 @@ public class Cotización extends Responsability {
 	 * @param Articulo 
 	 * @return
 	 */
-	private float consultar(void Articulo) {
+	private float consultar(Articulo a) {
 		// TODO implement here
 		return 0.0f;
 	}
@@ -47,7 +47,6 @@ public class Cotización extends Responsability {
 	 */
 	public void setNextResponsability() {
 		// TODO implement here
-		return null;
 	}
 
 	/**
@@ -55,7 +54,6 @@ public class Cotización extends Responsability {
 	 */
 	public void registrarTransacción() {
 		// TODO implement here
-		return null;
 	}
 
 }

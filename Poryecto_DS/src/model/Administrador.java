@@ -1,163 +1,91 @@
 package MODEL;
 
-import java.util.*;
 
 /**
  * 
  */
-public class Administrador extends Persona implements VendedorPermiso {
+public class Administrador extends VendedorPermisos {
 
-	/**
-	 * Default constructor
-	 */
 	public Administrador() {
 	}
 
-	/**
-	 * 
-	 */
 	private boolean isSuper;
 
-
-
-
-	/**
-	 * @return
-	 */
+	
 	public void manejarTransacciones() {
 		// TODO implement here
-		return null;
 	}
 
-	/**
-	 * @param Articulo 
-	 * @param int 
-	 * @return
-	 */
-	public void ingresarStock(void Articulo, void int) {
+	
+	public void ingresarStock(Articulo a,int num) {
 		// TODO implement here
-		return null;
 	}
 
-	/**
-	 * @param float 
-	 * @return
-	 */
-	public void actualizarStock(void float) {
+	public void actualizarStock(float num) {
 		// TODO implement here
-		return null;
 	}
 
-	/**
-	 * @param float 
-	 * @return
-	 */
-	public void ingresarPrecioDeVenta(void float) {
+
+	public void ingresarPrecioDeVenta(float num) {
 		// TODO implement here
-		return null;
 	}
 
-	/**
-	 * @param float 
-	 * @return
-	 */
-	public void actualizarPrecioDeVenta(void float) {
+
+	public void actualizarPrecioDeVenta(float num) {
 		// TODO implement here
-		return null;
 	}
 
-	/**
-	 * @param a 
-	 * @return
-	 */
+
 	public boolean consultarArticulo(Articulo a) {
 		// TODO implement here
 		return false;
 	}
 
-	/**
-	 * @param a 
-	 * @return
-	 */
+
 	public void eliminarArticulo(Articulo a) {
 		// TODO implement here
-		return null;
 	}
 
-	/**
-	 * @param t 
-	 * @return
-	 */
+
 	public void ingresarTransaccion(Transaccion t) {
 		// TODO implement here
-		return null;
 	}
 
-	/**
-	 * @param t 
-	 * @return
-	 */
 	public void actualizarTransaccion(Transaccion t) {
 		// TODO implement here
-		return null;
 	}
 
-	/**
-	 * @param t 
-	 * @return
-	 */
+
 	public boolean consultarTransaccion(Transaccion t) {
 		// TODO implement here
 		return false;
 	}
 
-	/**
-	 * @param t 
-	 * @return
-	 */
+
 	public void eliminarTransaccion(Transaccion t) {
 		// TODO implement here
-		return null;
 	}
 
-	/**
-	 * @param s 
-	 * @param e 
-	 * @return
-	 */
-	public void ingresarCliente(boolean s, Empleado e) {
+	public void ingresarCliente(boolean b, Empleado e) {
 		// TODO implement here
-		return null;
 	}
-
-	/**
-	 * @param s 
-	 * @param e 
-	 * @return
-	 */
-	public void actualizarCliente(boolean s, Empleado e) {
+        
+	public void actualizarCliente(boolean b, Empleado e) {
 		// TODO implement here
-		return null;
 	}
 
-	/**
-	 * @param s 
-	 * @param e 
-	 * @return
-	 */
-	public boolean consultarCliente(boolean s, Empleado e) {
+	public boolean consultarCliente(boolean b, Empleado e) {
 		// TODO implement here
 		return false;
 	}
 
-	/**
-	 * @param s 
-	 * @param e 
-	 * @return
-	 */
 	public void eliminarCliente(boolean s, Empleado e) {
 		// TODO implement here
-		return null;
 	}
+
+    @Override
+    public void operacion(Object o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

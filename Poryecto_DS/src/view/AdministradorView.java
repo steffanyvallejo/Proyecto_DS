@@ -20,7 +20,6 @@ public class AdministradorView extends View {
 	 */
 	private void operacionesProductos() {
 		// TODO implement here
-		return null;
 	}
 
 	/**
@@ -28,7 +27,6 @@ public class AdministradorView extends View {
 	 */
 	private void operacionesVentas() {
 		// TODO implement here
-		return null;
 	}
 
 	/**
@@ -36,7 +34,6 @@ public class AdministradorView extends View {
 	 */
 	private void operacionesUsuarios() {
 		// TODO implement here
-		return null;
 	}
 
 	/**
@@ -44,7 +41,6 @@ public class AdministradorView extends View {
 	 */
 	private void aprobarAutorizacion() {
 		// TODO implement here
-		return null;
 	}
 
 }

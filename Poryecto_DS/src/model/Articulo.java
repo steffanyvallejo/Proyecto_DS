@@ -1,6 +1,5 @@
 package MODEL;
 
-import java.util.*;
 
 /**
  * 
@@ -26,7 +25,7 @@ public abstract class Articulo {
 	/**
 	 * 
 	 */
-	protected StringD descripcion;
+	protected String descripcion;
 
 	/**
 	 * 
@@ -51,7 +50,7 @@ public abstract class Articulo {
 	/**
 	 * 
 	 */
-	protected void marca;
+	protected String marca;
 
 
 

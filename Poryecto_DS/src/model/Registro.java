@@ -20,9 +20,8 @@ public class Registro extends Transaccion {
 	 * @param Cliente 
 	 * @return
 	 */
-	public void registrarCliente(void Cliente) {
+	public void registrarCliente(Cliente c) {
 		// TODO implement here
-		return null;
 	}
 
 	/**
@@ -30,7 +29,6 @@ public class Registro extends Transaccion {
 	 */
 	public void setNextResponsability() {
 		// TODO implement here
-		return null;
 	}
 
 	/**
@@ -38,7 +36,6 @@ public class Registro extends Transaccion {
 	 */
 	public void registrarTransacción() {
 		// TODO implement here
-		return null;
 	}
 
 }

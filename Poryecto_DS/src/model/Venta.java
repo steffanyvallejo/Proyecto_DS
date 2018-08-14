@@ -31,7 +31,7 @@ public class Venta extends Responsability {
 	/**
 	 * 
 	 */
-	private void idArticulo;
+	private int idArticulo;
 
 
 
@@ -52,7 +52,6 @@ public class Venta extends Responsability {
 	 */
 	public void setNextResponsability() {
 		// TODO implement here
-		return null;
 	}
 
 	/**
@@ -60,7 +59,6 @@ public class Venta extends Responsability {
 	 */
 	public void registrarTransacción() {
 		// TODO implement here
-		return null;
 	}
 
 }

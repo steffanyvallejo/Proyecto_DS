@@ -38,24 +38,8 @@ public class Transaccion {
 	 */
 	public String idVendedor;
 
-
-
-
-
-
-
-
-
-
-
-
-
-	/**
-	 * @return
-	 */
 	public void registrarTransacción() {
 		// TODO implement here
-		return null;
 	}
 
 }

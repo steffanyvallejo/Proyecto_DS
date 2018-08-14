@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 
  */
-public class Pago extends Pago {
+public class Pago {
 
 	/**
 	 * Default constructor

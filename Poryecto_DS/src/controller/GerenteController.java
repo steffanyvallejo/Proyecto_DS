@@ -22,7 +22,6 @@ public class GerenteController {
 	 */
 	public void actualizarTransaccion() {
 		// TODO implement here
-		return null;
 	}
 
 }

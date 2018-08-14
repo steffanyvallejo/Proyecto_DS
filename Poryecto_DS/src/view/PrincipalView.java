@@ -18,7 +18,6 @@ public class PrincipalView extends View {
 	 */
 	private void autenticarEmpleado() {
 		// TODO implement here
-		return null;
 	}
 
 }

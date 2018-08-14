@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 
  */
-public class Credito extends Pago implements PagoStrategy, PagoStrategy {
+public class Credito extends Pago implements PagoStrategy{
 
 	/**
 	 * Default constructor
@@ -32,7 +32,7 @@ public class Credito extends Pago implements PagoStrategy, PagoStrategy {
 	 * @param double total 
 	 * @return
 	 */
-	private boolean realizarCargo(void double total) {
+	private boolean realizarCargo(double total) {
 		// TODO implement here
 		return false;
 	}
@@ -44,18 +44,5 @@ public class Credito extends Pago implements PagoStrategy, PagoStrategy {
 		// TODO implement here
 	}
 
-	/**
-	 * 
-	 */
-	public void pagar() {
-		// TODO implement here
-	}
-
-	/**
-	 * 
-	 */
-	public void pagar() {
-		// TODO implement here
-	}
 
 }

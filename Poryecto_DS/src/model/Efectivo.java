@@ -25,11 +25,5 @@ public class Efectivo extends Pago implements PagoStrategy {
 		// TODO implement here
 	}
 
-	/**
-	 * 
-	 */
-	public void pagar() {
-		// TODO implement here
-	}
 
 }

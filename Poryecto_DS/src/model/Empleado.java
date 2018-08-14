@@ -31,7 +31,6 @@ public class Empleado extends Persona {
 	 */
 	public void autenticar(String uuario, String contraseña) {
 		// TODO implement here
-		return null;
 	}
 
 }

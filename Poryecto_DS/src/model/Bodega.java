@@ -16,7 +16,7 @@ public class Bodega extends Local {
 	/**
 	 * 
 	 */
-	public List of Articulos Articulos;
+	public List<Articulo> Articulos;
 
 
 }

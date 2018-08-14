@@ -18,7 +18,7 @@ public class Gerente extends Persona {
 	 * @param c Cliente 
 	 * @return
 	 */
-	public boolean consultaCliente(void c Cliente) {
+	public boolean consultaCliente(Cliente c) {
 		// TODO implement here
 		return false;
 	}
@@ -27,7 +27,7 @@ public class Gerente extends Persona {
 	 * @param a Articulo 
 	 * @return
 	 */
-	public boolean consultaArticulo(void a Articulo) {
+	public boolean consultaArticulo(Articulo a) {
 		// TODO implement here
 		return false;
 	}
@@ -36,7 +36,7 @@ public class Gerente extends Persona {
 	 * @param t Transaccion 
 	 * @return
 	 */
-	public boolean consultaTransaccion(void t Transaccion) {
+	public boolean consultaTransaccion(Transaccion t) {
 		// TODO implement here
 		return false;
 	}

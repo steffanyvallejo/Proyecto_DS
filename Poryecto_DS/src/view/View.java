@@ -16,27 +16,27 @@ public class View {
 	/**
 	 * 
 	 */
-	private void tamañoDeVista;
+	private int tamañoDeVista;
 
 	/**
 	 * 
 	 */
-	private void titulo;
+	private String titulo;
 
 	/**
 	 * 
 	 */
-	private void modelo;
+	private String modelo;
 
 	/**
 	 * 
 	 */
-	private void graficas;
+	private String graficas;
 
 	/**
 	 * 
 	 */
-	private void imagenDeFondo;
+	private String imagenDeFondo;
 
 
 
@@ -45,7 +45,6 @@ public class View {
 	 */
 	private void setModelo() {
 		// TODO implement here
-		return null;
 	}
 
 	/**
@@ -53,7 +52,6 @@ public class View {
 	 */
 	private void setImagenFondo() {
 		// TODO implement here
-		return null;
 	}
 
 	/**
@@ -61,7 +59,6 @@ public class View {
 	 */
 	private void setGrafica() {
 		// TODO implement here
-		return null;
 	}
 
 }

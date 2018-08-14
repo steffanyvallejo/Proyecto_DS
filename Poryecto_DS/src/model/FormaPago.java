@@ -23,14 +23,14 @@ public class FormaPago {
 	/**
 	 * @param PagoStrategy strategy
 	 */
-	public void FormaDePago(void PagoStrategy strategy) {
+	public void FormaDePago(PagoStrategy strategy) {
 		// TODO implement here
 	}
 
 	/**
 	 * @param Pago
 	 */
-	public void pago(void Pago) {
+	public void pago(Pago p) {
 		// TODO implement here
 	}
 

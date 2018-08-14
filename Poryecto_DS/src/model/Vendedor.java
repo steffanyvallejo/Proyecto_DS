@@ -13,29 +13,15 @@ public class Vendedor extends Persona {
 	public Vendedor() {
 	}
 
-
-
-
-
-
-
-
-
-
-	/**
-	 * @param Cliente 
-	 * @return
-	 */
-	public void agregarCliente(void Cliente) {
+	public void agregarCliente(Cliente c) {
 		// TODO implement here
-		return null;
 	}
 
 	/**
 	 * @param Articulo 
 	 * @return
 	 */
-	public float cotizar(void Articulo) {
+	public float cotizar(Articulo a) {
 		// TODO implement here
 		return 0.0f;
 	}
@@ -44,16 +30,15 @@ public class Vendedor extends Persona {
 	 * @param Articulo 
 	 * @return
 	 */
-	public void vender(void Articulo) {
+	public void vender(Articulo a) {
 		// TODO implement here
-		return null;
 	}
 
 	/**
 	 * @param c Cliente 
 	 * @return
 	 */
-	public boolean consultarCliente(void c Cliente) {
+	public boolean consultarCliente(Cliente c) {
 		// TODO implement here
 		return false;
 	}
@@ -62,7 +47,7 @@ public class Vendedor extends Persona {
 	 * @param a Articulo 
 	 * @return
 	 */
-	public boolean consultarArticulo(void a Articulo) {
+	public boolean consultarArticulo(Articulo a) {
 		// TODO implement here
 		return false;
 	}

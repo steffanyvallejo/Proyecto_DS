@@ -7,35 +7,19 @@ import java.util.*;
  */
 public class Cliente extends Persona {
 
-	/**
-	 * Default constructor
-	 */
 	public Cliente() {
 	}
 
-
-
-
-
-
-
-
-	/**
-	 * @param float 
-	 * @return
-	 */
-	public void pagar(void float) {
+	public void pagar(float num) {
 		// TODO implement here
-		return null;
 	}
 
 	/**
 	 * @param Articulo 
 	 * @return
 	 */
-	public void comprar(void Articulo) {
+	public void comprar(Articulo a) {
 		// TODO implement here
-		return null;
 	}
 
 }

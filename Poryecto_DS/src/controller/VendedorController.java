@@ -1,6 +1,7 @@
 package CONTROLLER;
 
-import java.util.*;
+import MODEL.Venta;
+import MODEL.Cliente;
 
 /**
  * 

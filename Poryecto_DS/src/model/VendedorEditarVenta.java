@@ -13,10 +13,9 @@ public class VendedorEditarVenta extends VendedorPermisos {
 	public VendedorEditarVenta() {
 	}
 
-	/**
-	 * @param o 
-	 * @return
-	 */
-	public abstract void operacion(Object o);
+    @Override
+    public void operacion(Object o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

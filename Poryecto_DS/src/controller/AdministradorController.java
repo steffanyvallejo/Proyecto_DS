@@ -1,7 +1,7 @@
 package CONTROLLER;
 
-import model.Transaccion;
-import model.Articulo;
+import MODEL.Transaccion;
+import MODEL.Articulo;
 
 /**
  * 

@@ -16,6 +16,6 @@ public class Matriz extends Local {
 	/**
 	 * 
 	 */
-	private boolean internet = True;
+	private boolean internet = true;
 
 }
