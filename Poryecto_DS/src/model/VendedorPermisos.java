@@ -1,28 +1,23 @@
-package MODEL;
-
-import java.util.*;
+package model;
 
 /**
- * 
+ *
  */
 public abstract class VendedorPermisos extends Vendedor {
 
-	/**
-	 * Default constructor
-	 */
-	public VendedorPermisos() {
-	}
+    private Vendedor vendedor;
 
-	/**
-	 * 
-	 */
-	private Vendedor vendedor;
-
-
-	/**
-	 * @param o 
-	 * @return
-	 */
-	public abstract void operacion(Object o);
+    /**
+     * Default constructor
+     */
+    public VendedorPermisos(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+    
+    /**
+     * @param o
+     * @return
+     */
+    public abstract void operacion(Object o);
 
 }

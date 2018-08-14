@@ -1,4 +1,4 @@
-package VIEW;
+package view;
 
 import java.util.*;
 

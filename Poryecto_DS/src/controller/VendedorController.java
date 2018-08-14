@@ -1,7 +1,7 @@
-package CONTROLLER;
+package controller;
 
-import MODEL.Venta;
-import MODEL.Cliente;
+import model.Venta;
+import model.Cliente;
 
 /**
  * 

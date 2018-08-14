@@ -1,6 +1,4 @@
-package MODEL;
-
-import java.util.*;
+package model;
 
 /**
  * 

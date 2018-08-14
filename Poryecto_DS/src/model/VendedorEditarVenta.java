@@ -1,21 +1,20 @@
-package MODEL;
-
-import java.util.*;
+package model;
 
 /**
- * 
+ *
  */
 public class VendedorEditarVenta extends VendedorPermisos {
 
-	/**
-	 * Default constructor
-	 */
-	public VendedorEditarVenta() {
-	}
+    /**
+     * Default constructor
+     */
+    public VendedorEditarVenta(Vendedor vendedor) {
+        super(vendedor);
+    }
 
     @Override
     public void operacion(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("edicion de venta ...");
     }
 
 }

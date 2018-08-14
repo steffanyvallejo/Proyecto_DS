@@ -1,91 +1,82 @@
-package MODEL;
-
+package model;
 
 /**
- * 
+ *
  */
-public class Administrador extends VendedorPermisos {
+public class Administrador implements PeticionPermiso{
 
-	public Administrador() {
-	}
+    private boolean isSuper;
 
-	private boolean isSuper;
+    public Administrador() {
+    }
 
-	
-	public void manejarTransacciones() {
-		// TODO implement here
-	}
+    public void manejarTransacciones() {
+        // TODO implement here
+    }
 
-	
-	public void ingresarStock(Articulo a,int num) {
-		// TODO implement here
-	}
+    public void ingresarStock(Articulo a, int num) {
+        // TODO implement here
+    }
 
-	public void actualizarStock(float num) {
-		// TODO implement here
-	}
+    public void actualizarStock(float num) {
+        // TODO implement here
+    }
 
+    public void ingresarPrecioDeVenta(float num) {
+        // TODO implement here
+    }
 
-	public void ingresarPrecioDeVenta(float num) {
-		// TODO implement here
-	}
+    public void actualizarPrecioDeVenta(float num) {
+        // TODO implement here
+    }
 
+    public boolean consultarArticulo(Articulo a) {
+        // TODO implement here
+        return false;
+    }
 
-	public void actualizarPrecioDeVenta(float num) {
-		// TODO implement here
-	}
+    public void eliminarArticulo(Articulo a) {
+        // TODO implement here
+    }
 
+    public void ingresarTransaccion(Transaccion t) {
+        // TODO implement here
+    }
 
-	public boolean consultarArticulo(Articulo a) {
-		// TODO implement here
-		return false;
-	}
+    public void actualizarTransaccion(Transaccion t) {
+        // TODO implement here
+    }
 
+    public boolean consultarTransaccion(Transaccion t) {
+        // TODO implement here
+        return false;
+    }
 
-	public void eliminarArticulo(Articulo a) {
-		// TODO implement here
-	}
+    public void eliminarTransaccion(Transaccion t) {
+        // TODO implement here
+    }
 
+    public void ingresarCliente(boolean b, Empleado e) {
+        // TODO implement here
+    }
 
-	public void ingresarTransaccion(Transaccion t) {
-		// TODO implement here
-	}
+    public void actualizarCliente(boolean b, Empleado e) {
+        // TODO implement here
+    }
 
-	public void actualizarTransaccion(Transaccion t) {
-		// TODO implement here
-	}
+    public boolean consultarCliente(boolean b, Empleado e) {
+        // TODO implement here
+        return false;
+    }
 
-
-	public boolean consultarTransaccion(Transaccion t) {
-		// TODO implement here
-		return false;
-	}
-
-
-	public void eliminarTransaccion(Transaccion t) {
-		// TODO implement here
-	}
-
-	public void ingresarCliente(boolean b, Empleado e) {
-		// TODO implement here
-	}
-        
-	public void actualizarCliente(boolean b, Empleado e) {
-		// TODO implement here
-	}
-
-	public boolean consultarCliente(boolean b, Empleado e) {
-		// TODO implement here
-		return false;
-	}
-
-	public void eliminarCliente(boolean s, Empleado e) {
-		// TODO implement here
-	}
+    public void eliminarCliente(boolean s, Empleado e) {
+        // TODO implement here
+    }
 
     @Override
-    public void operacion(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update() {
+        System.out.println("Administrador:");
+        System.out.println("Concebir permiso ...");
     }
 
 }
