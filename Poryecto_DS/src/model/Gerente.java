@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 
  */
-public class Gerente extends Persona {
+public class Gerente extends Empleado {
 
 	/**
 	 * Default constructor

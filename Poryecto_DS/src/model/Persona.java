@@ -16,11 +16,6 @@ public abstract class Persona {
 	/**
 	 * 
 	 */
-	protected String idPersona;
-
-	/**
-	 * 
-	 */
 	protected String nombre;
 
 	/**
@@ -47,6 +42,54 @@ public abstract class Persona {
 	 * 
 	 */
 	protected String correoElectronico;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getNumeroTelefonico() {
+        return numeroTelefonico;
+    }
+
+    public void setNumeroTelefonico(String numeroTelefonico) {
+        this.numeroTelefonico = numeroTelefonico;
+    }
+
+    public String getDirecciónDomicilio() {
+        return direcciónDomicilio;
+    }
+
+    public void setDirecciónDomicilio(String direcciónDomicilio) {
+        this.direcciónDomicilio = direcciónDomicilio;
+    }
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
 
 
 

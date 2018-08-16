@@ -5,12 +5,17 @@
  */
 package view;
 
+import controller.ConexionDB;
+import model.*;
+
 /**
  *
  * @author CltControl
  */
 public class MainView extends javax.swing.JFrame {
 
+    private ConexionDB cn;
+    
     /**
      * Creates new form MainView
      */
@@ -102,7 +107,43 @@ public class MainView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String user = jTextField1.getText();
+        String pass = jPasswordField1.getText();
+        cn = new ConexionDB();
+        Empleado emp = cn.login(user, pass);
+        if(emp==null){
+            jLabel4.setText("Usuario o contraseña inválido");
+        }else{
+            String t = emp.getTipo();
+            if(t.equals("v")){
+                Vendedor v = (Vendedor)emp;     
+                VendedorViewP vv = new VendedorViewP(v);                
+                vv.jLabel2.setText(v.getNombre()+" "+v.getApellido());
+                this.setVisible(false);
+                vv.setVisible(true);
+            }else if(t.equals("g")){
+                Gerente g = (Gerente)emp;                     
+                GerenteViewP gv = new GerenteViewP(g);
+                gv.jLabel2.setText(g.getNombre()+" "+g.getApellido());
+                this.setVisible(false);
+                gv.setVisible(true);
+            }else if(t.equals("a")){
+                Administrador a = (Administrador)emp;                                   
+                AdministradorViewP av = new AdministradorViewP(a);
+                av.jLabel2.setText(a.getNombre()+" "+a.getApellido());
+                if(!a.isIsSuper()){
+                    av.jLabel5.setVisible(false);
+                    av.jButton10.setVisible(false);
+                    av.jButton11.setVisible(false);
+                    av.jButton12.setVisible(false);
+                    av.jButton13.setVisible(false);
+                }
+                this.setVisible(false);
+                av.setVisible(true);                
+            }
+        }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

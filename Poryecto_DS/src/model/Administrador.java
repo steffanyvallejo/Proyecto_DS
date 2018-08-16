@@ -3,10 +3,8 @@ package model;
 /**
  *
  */
-public class Administrador implements PeticionPermiso{
-
-    private boolean isSuper;
-
+public class Administrador extends Empleado implements PeticionPermiso{
+    
     public Administrador() {
     }
 

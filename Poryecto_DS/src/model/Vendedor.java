@@ -3,7 +3,7 @@ package model;
 /**
  *
  */
-public class Vendedor extends Persona {
+public class Vendedor extends Empleado {
 
     /**
      * Default constructor

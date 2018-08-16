@@ -5,6 +5,9 @@
  */
 package view;
 
+import java.sql.Connection;
+import model.Gerente;
+
 /**
  *
  * @author CltControl
@@ -14,7 +17,11 @@ public class GerenteViewP extends javax.swing.JFrame {
     /**
      * Creates new form GerenteViewP
      */
-    public GerenteViewP() {
+    
+    private Gerente g;
+    
+    public GerenteViewP(Gerente g) {  
+        this.g=g;
         initComponents();
     }
 
@@ -47,6 +54,11 @@ public class GerenteViewP extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         jButton1.setText("LOGOUT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("CONSULTAR PRODUCTO");
 
@@ -106,7 +118,7 @@ public class GerenteViewP extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -120,6 +132,12 @@ public class GerenteViewP extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        MainView mv = new MainView();
+        this.setVisible(false);
+        mv.setVisible(true);        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,11 +167,13 @@ public class GerenteViewP extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        /*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GerenteViewP().setVisible(true);
             }
         });
+        */
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -163,7 +183,7 @@ public class GerenteViewP extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables

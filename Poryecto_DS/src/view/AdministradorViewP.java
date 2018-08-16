@@ -5,16 +5,22 @@
  */
 package view;
 
+import java.sql.Connection;
+import model.Administrador;
+
 /**
  *
  * @author CltControl
  */
 public class AdministradorViewP extends javax.swing.JFrame {
 
+    
+    private Administrador a;
     /**
      * Creates new form AdministradorViewP
      */
-    public AdministradorViewP() {
+    public AdministradorViewP(Administrador a) {        
+        this.a=a;
         initComponents();
     }
 
@@ -49,7 +55,6 @@ public class AdministradorViewP extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(507, 488));
         setMinimumSize(new java.awt.Dimension(507, 488));
-        setPreferredSize(new java.awt.Dimension(507, 488));
         setResizable(false);
 
         jLabel1.setText("BIENVENIDO, ");
@@ -57,6 +62,11 @@ public class AdministradorViewP extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         jButton1.setText("LOGOUT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("MENU DE PRODUCTOS");
 
@@ -83,15 +93,15 @@ public class AdministradorViewP extends javax.swing.JFrame {
 
         jButton9.setText("ELIMINAR VENTA");
 
-        jLabel5.setText("MENU DE CLIENTES");
+        jLabel5.setText("MENU DE USUARIOS");
 
-        jButton10.setText("AGREGAR CLIENTE");
+        jButton10.setText("AGREGAR USUARIO");
 
-        jButton11.setText("ACTUALIZAR CLIENTE");
+        jButton11.setText("ACTUALIZAR USUARIO");
 
-        jButton12.setText("CONSULTAR CLIENTE");
+        jButton12.setText("CONSULTAR USUARIO");
 
-        jButton13.setText("ELIMINAR CLIENTE");
+        jButton13.setText("ELIMINAR USUARIO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,6 +193,12 @@ public class AdministradorViewP extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        MainView mv = new MainView();
+        this.setVisible(false);
+        mv.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -211,19 +227,21 @@ public class AdministradorViewP extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        /*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AdministradorViewP().setVisible(true);
             }
         });
+        */
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
+    public javax.swing.JButton jButton10;
+    public javax.swing.JButton jButton11;
+    public javax.swing.JButton jButton12;
+    public javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -233,9 +251,9 @@ public class AdministradorViewP extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

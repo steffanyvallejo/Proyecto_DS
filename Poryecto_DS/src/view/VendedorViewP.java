@@ -5,16 +5,23 @@
  */
 package view;
 
+import java.sql.Connection;
+import model.Vendedor;
+
 /**
  *
  * @author CltControl
  */
 public class VendedorViewP extends javax.swing.JFrame {
 
+    
+    
+    private Vendedor v;
     /**
      * Creates new form VendedorViewP
      */
-    public VendedorViewP() {
+    public VendedorViewP(Vendedor v) {    
+        this.v=v;
         initComponents();
     }
 
@@ -196,11 +203,13 @@ public class VendedorViewP extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        /*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VendedorViewP().setVisible(true);
             }
         });
+        */
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -212,7 +221,7 @@ public class VendedorViewP extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
