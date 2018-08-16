@@ -39,6 +39,7 @@ public class Pago {
 	 */
 	public double calcularValorTotal() {
 		// TODO implement here
+                System.out.println("Calculando valor total...");
 		return 0.0d;
 	}
 

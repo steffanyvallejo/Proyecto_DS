@@ -23,6 +23,7 @@ public class Efectivo extends Pago implements PagoStrategy {
 	 */
 	public void pagar() {
 		// TODO implement here
+                System.out.println("Pagando en efectivo...");
 	}
 
 

@@ -21,17 +21,19 @@ public class FormaPago {
 
 
 	/**
-	 * @param PagoStrategy strategy
+     * @param strategy
 	 */
 	public void FormaDePago(PagoStrategy strategy) {
 		// TODO implement here
+                this.strategy=strategy;
 	}
 
 	/**
-	 * @param Pago
+	 * @param pago
 	 */
-	public void pago(Pago p) {
+	public void pago(Pago pago) {
 		// TODO implement here
+                strategy.pagar();
 	}
 
 }

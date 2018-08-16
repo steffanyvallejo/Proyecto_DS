@@ -42,6 +42,7 @@ public class Credito extends Pago implements PagoStrategy{
 	 */
 	public void pagar() {
 		// TODO implement here
+                System.out.println("Pagando con tarjeta de crédito...");
 	}
 
 

@@ -4,7 +4,12 @@ import model.Cliente;
 import model.Vendedor;
 import model.VendedorEditarVenta;
 import model.Administrador;
+import model.Articulo;
+import model.CocinaInduccion;
+import model.Credito;
+import model.FormaPago;
 import model.NotificacionPeticion;
+import model.Pago;
 import view.MainView;
 
 /**
@@ -29,6 +34,15 @@ public class Main {
         NotificacionPeticion np = new NotificacionPeticion();
         np.attach(adm);
         v.pedirPermiso(np);
+        
+        /*
+            Prueba Strategy
+        */
+        Articulo a= new CocinaInduccion();
+        FormaPago formadePago= new FormaPago();
+        formadePago.FormaDePago(new Credito());
+        formadePago.pago(new Credito());
+        v.vender(a);
     }
     /**
      * Default constructor
