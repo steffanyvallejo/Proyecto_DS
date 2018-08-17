@@ -8,11 +8,10 @@ import model.Administrador;
 import model.Articulo;
 import model.CocinaInduccion;
 import model.Credito;
-import model.Empleado;
 import model.FormaPago;
 import model.NotificacionPeticion;
-import model.Pago;
-import view.MainView;
+
+
 
 /**
  *
