@@ -1,70 +1,62 @@
 package model;
 
-
 /**
- * 
+ *
  */
 public abstract class Articulo {
 
-	/**
-	 * Default constructor
-	 */
-	public Articulo() {
-	}
+    /**
+     * Default constructor
+     */
+    public Articulo() {
+    }
 
-	/**
-	 * 
-	 */
-	protected int idArticulo;
+    /**
+     *
+     */
+    protected int idArticulo;
 
-	/**
-	 * 
-	 */
-	protected String nombre;
+    /**
+     *
+     */
+    protected String nombre;
 
-	/**
-	 * 
-	 */
-	protected String descripcion;
+    /**
+     *
+     */
+    protected String descripcion;
 
-	/**
-	 * 
-	 */
-	protected String categoria;
+    /**
+     *
+     */
+    protected String categoria;
 
-	/**
-	 * 
-	 */
-	protected int stock;
+    /**
+     *
+     */
+    protected int stock;
 
-	/**
-	 * 
-	 */
-	protected boolean estado;
+    /**
+     *
+     */
+    protected boolean estado;
 
-	/**
-	 * 
-	 */
-	protected float precio;
+    /**
+     *
+     */
+    protected float precio;
 
-	/**
-	 * 
-	 */
-	protected String marca;
+    /**
+     *
+     */
+    protected String marca;
 
-
-
-
-
-
-
-
-	/**
-	 * @return
-	 */
-	public int generarCodigo() {
-		// TODO implement here
-		return 0;
-	}
+    /**
+     * @return
+     */
+    public int generarCodigo() {
+        // TODO implement here
+        return 0;
+    }
 
 }
