@@ -7,39 +7,27 @@ import java.util.*;
  */
 public class Transaccion {
 
-	/**
-	 * Default constructor
-	 */
-	public Transaccion() {
-	}
+    public Transaccion(Cliente c, Vendedor v) {
+        java.util.Date fecha = new Date();
+        this.idTransacción+=1;
+        this.fecha=fecha;
+        this.idCliente=c.getId();
+        this.idVendedor=v.getId();
+    }
+    
 
-	/**
-	 * 
-	 */
-	private String idTransacción;
+    public int idTransacción=0;
 
-	/**
-	 * 
-	 */
-	private Date fecha;
+    private Date fecha;
 
-	/**
-	 * 
-	 */
-	private Date hora;
+    public String idCliente;
 
-	/**
-	 * 
-	 */
-	public String idCliente;
+    public String idVendedor;
 
-	/**
-	 * 
-	 */
-	public String idVendedor;
 
-	public void registrarTransacción() {
-		// TODO implement here
-	}
+    public void registrarTransacción(int idTransaccion) {
+        System.out.println("Transacion"+this.idTransacción+" exitosa");
+
+    }
 
 }

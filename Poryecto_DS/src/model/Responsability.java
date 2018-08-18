@@ -7,24 +7,17 @@ import java.util.*;
  */
 public class Responsability {
 
-	/**
-	 * Default constructor
-	 */
+	private String responsabilidad;
+        
 	public Responsability() {
+            this.responsabilidad=responsabilidad;
 	}
 
 	/**
 	 * @return
 	 */
-	public void setNextResponsability() {
-		// TODO implement here
-	}
-
-	/**
-	 * @return
-	 */
-	public void registrarTransacción() {
-		// TODO implement here
-	}
+	public void setNextResponsability(String s) {
+                this.responsabilidad=s;
+        }
 
 }

@@ -7,33 +7,18 @@ import java.util.*;
  */
 public class Registro extends Transaccion {
 
-	/**
-	 * Default constructor
-	 */
-	public Registro() {
-	}
+    public Registro(Cliente c, Vendedor v) {
+        super(c, v);
+    }
 
-
-
-
-	/**
-	 * @param Cliente 
-	 * @return
-	 */
 	public void registrarCliente(Cliente c) {
 		// TODO implement here
 	}
 
-	/**
-	 * @return
-	 */
 	public void setNextResponsability() {
 		// TODO implement here
 	}
 
-	/**
-	 * @return
-	 */
 	public void registrarTransacción() {
 		// TODO implement here
 	}
