@@ -17,11 +17,12 @@ public class AdministradorFinal extends javax.swing.JFrame {
     /**
      * Creates new form VendedorFinal
      */
+    
     Administrador administrador;
-
+    
     public AdministradorFinal(Administrador administrador) {
         getContentPane().setBackground(Color.white);
-        this.administrador = administrador;
+        this.administrador=administrador;
         initComponents();
     }
 
@@ -34,38 +35,13 @@ public class AdministradorFinal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtpassword = new javax.swing.JTextField();
-        eleccion = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
-        ActualizarPanel = new javax.swing.JPanel();
-        ConsultarPanel = new javax.swing.JPanel();
-        EliminarPanel = new javax.swing.JPanel();
-        AgregarPanel = new javax.swing.JPanel();
-        Gerente = new javax.swing.JRadioButton();
-        Administrador = new javax.swing.JRadioButton();
-        Vendedor = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        txtnombre = new javax.swing.JTextField();
-        txtapellido = new javax.swing.JTextField();
-        txtdireccion = new javax.swing.JTextField();
-        txtcelular = new javax.swing.JTextField();
-        txtcorreo = new javax.swing.JTextField();
-        txtusuario = new javax.swing.JTextField();
-        password = new javax.swing.JPasswordField();
-        pregunta = new javax.swing.JLabel();
-        superAdmin = new javax.swing.JRadioButton();
-        limpiarbtn = new javax.swing.JButton();
-        registrarbtn = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel10 = new javax.swing.JPanel();
@@ -82,9 +58,8 @@ public class AdministradorFinal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
 
-        txtpassword.setText("jTextField1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(623, 467));
         setMinimumSize(new java.awt.Dimension(623, 467));
         setResizable(false);
 
@@ -94,233 +69,65 @@ public class AdministradorFinal extends javax.swing.JFrame {
         jTabbedPane3.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane3.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 10)); // NOI18N
 
-        ActualizarPanel.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout ActualizarPanelLayout = new javax.swing.GroupLayout(ActualizarPanel);
-        ActualizarPanel.setLayout(ActualizarPanelLayout);
-        ActualizarPanelLayout.setHorizontalGroup(
-            ActualizarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 613, Short.MAX_VALUE)
         );
-        ActualizarPanelLayout.setVerticalGroup(
-            ActualizarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 337, Short.MAX_VALUE)
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
         );
 
-        jTabbedPane3.addTab("ACTUALIZAR", ActualizarPanel);
+        jTabbedPane3.addTab("AGREGAR", jPanel6);
 
-        ConsultarPanel.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout ConsultarPanelLayout = new javax.swing.GroupLayout(ConsultarPanel);
-        ConsultarPanel.setLayout(ConsultarPanelLayout);
-        ConsultarPanelLayout.setHorizontalGroup(
-            ConsultarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 613, Short.MAX_VALUE)
         );
-        ConsultarPanelLayout.setVerticalGroup(
-            ConsultarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 337, Short.MAX_VALUE)
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
         );
 
-        jTabbedPane3.addTab("CONSULTAR", ConsultarPanel);
+        jTabbedPane3.addTab("ACTUALIZAR", jPanel7);
 
-        EliminarPanel.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout EliminarPanelLayout = new javax.swing.GroupLayout(EliminarPanel);
-        EliminarPanel.setLayout(EliminarPanelLayout);
-        EliminarPanelLayout.setHorizontalGroup(
-            EliminarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 613, Short.MAX_VALUE)
         );
-        EliminarPanelLayout.setVerticalGroup(
-            EliminarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 337, Short.MAX_VALUE)
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
         );
 
-        jTabbedPane3.addTab("ELIMINAR", EliminarPanel);
+        jTabbedPane3.addTab("CONSULTAR", jPanel8);
 
-        AgregarPanel.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
-        Gerente.setText("Gerente");
-        Gerente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GerenteActionPerformed(evt);
-            }
-        });
-
-        Administrador.setText("Administrador");
-        Administrador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdministradorActionPerformed(evt);
-            }
-        });
-
-        Vendedor.setText("Vendedor");
-
-        jLabel3.setText("Agregar nuevo usuario");
-
-        jLabel4.setText("Nombres");
-
-        jLabel6.setText("Apellidos");
-
-        jLabel7.setText("Dirrección");
-
-        jLabel8.setText("Numero de ceular");
-
-        jLabel9.setText("Usuario");
-
-        jLabel10.setText("Correo");
-
-        jLabel11.setText("Contraseña");
-
-        txtnombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnombreActionPerformed(evt);
-            }
-        });
-
-        txtapellido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtapellidoActionPerformed(evt);
-            }
-        });
-
-        password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
-            }
-        });
-
-        pregunta.setText("¿Es super admin?");
-
-        superAdmin.setText("Marque si la respuesta es sí");
-        superAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                superAdminActionPerformed(evt);
-            }
-        });
-
-        limpiarbtn.setText("Limpiar");
-        limpiarbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limpiarbtnActionPerformed(evt);
-            }
-        });
-
-        registrarbtn.setText("Registrar");
-        registrarbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registrarbtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout AgregarPanelLayout = new javax.swing.GroupLayout(AgregarPanel);
-        AgregarPanel.setLayout(AgregarPanelLayout);
-        AgregarPanelLayout.setHorizontalGroup(
-            AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AgregarPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Administrador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Gerente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Vendedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AgregarPanelLayout.createSequentialGroup()
-                        .addComponent(pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AgregarPanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(AgregarPanelLayout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(superAdmin)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(AgregarPanelLayout.createSequentialGroup()
-                        .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(AgregarPanelLayout.createSequentialGroup()
-                                .addComponent(registrarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(limpiarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(55, 55, 55))
-                            .addGroup(AgregarPanelLayout.createSequentialGroup()
-                                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtdireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                                    .addComponent(txtapellido, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                                    .addComponent(txtnombre)
-                                    .addComponent(txtcelular, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                                    .addComponent(txtcorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                                    .addComponent(txtusuario, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                                    .addComponent(password))))
-                        .addGap(22, 143, Short.MAX_VALUE))))
-            .addGroup(AgregarPanelLayout.createSequentialGroup()
-                .addGap(251, 251, 251)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 613, Short.MAX_VALUE)
         );
-        AgregarPanelLayout.setVerticalGroup(
-            AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AgregarPanelLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel3)
-                .addGap(28, 28, 28)
-                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Gerente)
-                    .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4)
-                        .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Administrador)
-                    .addComponent(jLabel6)
-                    .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Vendedor)
-                    .addComponent(jLabel7)
-                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AgregarPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10))
-                    .addGroup(AgregarPanelLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(txtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pregunta)
-                    .addComponent(superAdmin))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(AgregarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(limpiarbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(registrarbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18))
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
         );
 
-        jTabbedPane3.addTab("AGREGAR", AgregarPanel);
+        jTabbedPane3.addTab("ELIMINAR", jPanel9);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -536,52 +343,8 @@ public class AdministradorFinal extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         InicioFinal ventanaI = new InicioFinal();
         this.setVisible(false);
-        eleccion.add(Gerente);
-        eleccion.add(Administrador);
-        eleccion.add(Vendedor);
         ventanaI.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void GerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenteActionPerformed
-        pregunta.setVisible(false);
-        superAdmin.setVisible(false);
-
-    }//GEN-LAST:event_GerenteActionPerformed
-
-    private void superAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_superAdminActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_superAdminActionPerformed
-
-    private void registrarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarbtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_registrarbtnActionPerformed
-
-    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnombreActionPerformed
-
-    private void txtapellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtapellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtapellidoActionPerformed
-
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
-
-    private void limpiarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarbtnActionPerformed
-        txtapellido.setText("");
-        txtusuario.setText("");
-        txtnombre.setText("");
-        txtcelular.setText("");
-        txtcorreo.setText("");
-        txtdireccion.setText("");
-        password.setText("");
-    }//GEN-LAST:event_limpiarbtnActionPerformed
-
-    private void AdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradorActionPerformed
-        pregunta.setVisible(true);
-        superAdmin.setVisible(true);
-    }//GEN-LAST:event_AdministradorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -612,36 +375,19 @@ public class AdministradorFinal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
- /*
+        /*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AdministradorFinal().setVisible(true);
             }
         });
-         */
+        */
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ActualizarPanel;
-    private javax.swing.JRadioButton Administrador;
-    private javax.swing.JPanel AgregarPanel;
-    private javax.swing.JPanel ConsultarPanel;
-    private javax.swing.JPanel EliminarPanel;
-    private javax.swing.JRadioButton Gerente;
-    private javax.swing.JRadioButton Vendedor;
-    private javax.swing.ButtonGroup eleccion;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     public javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -653,21 +399,13 @@ public class AdministradorFinal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JButton limpiarbtn;
-    private javax.swing.JPasswordField password;
-    private javax.swing.JLabel pregunta;
-    private javax.swing.JButton registrarbtn;
-    private javax.swing.JRadioButton superAdmin;
-    private javax.swing.JTextField txtapellido;
-    private javax.swing.JTextField txtcelular;
-    private javax.swing.JTextField txtcorreo;
-    private javax.swing.JTextField txtdireccion;
-    private javax.swing.JTextField txtnombre;
-    private javax.swing.JTextField txtpassword;
-    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  *
  */
-public abstract class Empleado extends Persona {
+public class Empleado extends Persona {
 
     /**
      * Default constructor

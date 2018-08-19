@@ -6,6 +6,9 @@
 package view;
 
 import java.awt.Color;
+import java.util.LinkedList;
+
+import model.Articulo;
 import model.Vendedor;
 
 /**
@@ -17,12 +20,11 @@ public class VendedorFinal extends javax.swing.JFrame {
     /**
      * Creates new form VendedorFinal
      */
-    
     Vendedor vendedor;
-    
+
     public VendedorFinal(Vendedor vendedor) {
         getContentPane().setBackground(Color.white);
-        this.vendedor=vendedor;
+        this.vendedor = vendedor;
         initComponents();
     }
 
@@ -126,25 +128,17 @@ public class VendedorFinal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTextField1.setText("jTextField1");
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "nombre", "descripción", "categoría", " " }));
 
         jButton4.setBackground(new java.awt.Color(0, 102, 102));
         jButton4.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 10)); // NOI18N
         jButton4.setText("BUSCAR");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
             }
-        ));
+        });
+
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -276,6 +270,30 @@ public class VendedorFinal extends javax.swing.JFrame {
         ventanaI.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        System.out.println((String) jComboBox1.getSelectedItem());
+        System.out.println(jTextField1.getText());
+        LinkedList<String> datos = vendedor.consultarArticulo((String) jComboBox1.getSelectedItem(), jTextField1.getText());
+        if (!datos.equals(null)) {
+            jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{
+                        {datos.get(0), datos.get(1), datos.get(2), datos.get(3)},},
+                    new String[]{
+                        "Nombre", "Categoría", "Precio", "Marca"
+                    }
+            ));
+        }else{
+            jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{
+                        {"NO HAY", "NO HAY","NO HAY", "NO HAY"},},
+                    new String[]{
+                        "Nombre", "Categoría", "Precio", "Marca"
+                    }
+            ));
+        }
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -304,13 +322,13 @@ public class VendedorFinal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        /*
+ /*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VendedorFinal().setVisible(true);
             }
         });
-        */
+         */
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,5 +1,8 @@
 package model;
 
+import controller.ConexionDB;
+import java.util.LinkedList;
+
 /**
  *
  */
@@ -8,6 +11,9 @@ public class Vendedor extends Empleado {
     /**
      * Default constructor
      */
+    
+    private ConexionDB cn;
+    
     public Vendedor() {
     }
 
@@ -45,9 +51,13 @@ public class Vendedor extends Empleado {
      * @param a Articulo
      * @return
      */
-    public boolean consultarArticulo(Articulo a) {
+    public LinkedList<String> consultarArticulo(String modo, String campo) {
         System.out.println("consulta articulo ...");
-        return false;
+        cn = new ConexionDB();
+        System.out.println(modo);
+        System.out.println(campo);
+        LinkedList<String> datos = cn.consultarArticulo(modo, campo);
+        return datos;
     }
     
     public void pedirPermiso(NotificacionPeticion np){

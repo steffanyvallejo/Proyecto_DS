@@ -45,15 +45,7 @@ public class Main {
         FormaPago formadePago= new FormaPago();
         formadePago.FormaDePago(new Credito());
         formadePago.pago(new Credito());
-        v.vender(a);
-                        
-        cn = new ConexionDB();
-        Vendedor vendedor = (Vendedor)cn.login("emilio", "emilio");
-        System.out.println(vendedor.getNombre());
-        
-        
-        
-        
+        v.vender(a);                                                      
     }
     /**
      * Default constructor
