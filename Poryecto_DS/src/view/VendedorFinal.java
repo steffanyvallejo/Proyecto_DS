@@ -274,7 +274,7 @@ public class VendedorFinal extends javax.swing.JFrame {
         System.out.println((String) jComboBox1.getSelectedItem());
         System.out.println(jTextField1.getText());
         LinkedList<String> datos = vendedor.consultarArticulo((String) jComboBox1.getSelectedItem(), jTextField1.getText());
-        if (!datos.equals(null)) {
+        if (datos.size()!=0) {
             jTable1.setModel(new javax.swing.table.DefaultTableModel(
                     new Object[][]{
                         {datos.get(0), datos.get(1), datos.get(2), datos.get(3)},},

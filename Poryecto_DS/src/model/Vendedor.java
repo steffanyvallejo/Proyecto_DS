@@ -1,6 +1,7 @@
 package model;
 
 import controller.ConexionDB;
+import controller.ConexionDBM;
 import java.util.LinkedList;
 
 /**
@@ -12,7 +13,7 @@ public class Vendedor extends Empleado {
      * Default constructor
      */
     
-    private ConexionDB cn;
+    private ConexionDBM cn;
     
     public Vendedor() {
     }
@@ -53,7 +54,7 @@ public class Vendedor extends Empleado {
      */
     public LinkedList<String> consultarArticulo(String modo, String campo) {
         System.out.println("consulta articulo ...");
-        cn = new ConexionDB();
+        cn = new ConexionDBM();
         System.out.println(modo);
         System.out.println(campo);
         LinkedList<String> datos = cn.consultarArticulo(modo, campo);
