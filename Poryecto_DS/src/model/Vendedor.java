@@ -2,6 +2,7 @@ package model;
 
 import controller.ConexionDB;
 import controller.ConexionDBM;
+import java.sql.Date;
 import java.util.LinkedList;
 
 /**
@@ -18,8 +19,10 @@ public class Vendedor extends Empleado {
     public Vendedor() {
     }
 
-    public void agregarCliente(Cliente c) {
+    public void agregarCliente(String nombre,String apellido,Date fech_nac,String telefono,String direccion, String correo) {
         System.out.println("agregando cliente ...");
+        cn = new ConexionDBM();
+        cn.agregarClienteDB(nombre, apellido, fech_nac, telefono, direccion, correo);
     }
 
     /**
@@ -52,12 +55,12 @@ public class Vendedor extends Empleado {
      * @param a Articulo
      * @return
      */
-    public LinkedList<String> consultarArticulo(String modo, String campo) {
+    public LinkedList<LinkedList<String>> consultarArticulo(String modo, String campo) {
         System.out.println("consulta articulo ...");
         cn = new ConexionDBM();
         System.out.println(modo);
         System.out.println(campo);
-        LinkedList<String> datos = cn.consultarArticulo(modo, campo);
+        LinkedList<LinkedList<String>> datos = cn.consultarArticulo(modo, campo);
         return datos;
     }
     

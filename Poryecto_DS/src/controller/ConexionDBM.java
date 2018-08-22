@@ -6,11 +6,13 @@
 package controller;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 import model.Administrador;
 import model.Empleado;
 import model.Gerente;
@@ -113,8 +115,8 @@ public class ConexionDBM {
         return null;
     }
     
-    public LinkedList<String> consultarArticulo(String modo, String campo){
-        LinkedList<String> datos = new LinkedList<String>();
+    public LinkedList<LinkedList<String>> consultarArticulo(String modo, String campo){
+        LinkedList<LinkedList<String>> datos = new LinkedList<LinkedList<String>>();
         establecerConexion();
         System.out.println("conecta db para articulo");
         if (modo.equals("nombre")) {
@@ -126,25 +128,98 @@ public class ConexionDBM {
                 ResultSet rs = pst.executeQuery();
                 System.out.println("ejecucion del query");
                 while (rs.next()) {
+                    LinkedList<String> temp = new LinkedList<String>();
                     String nombre = rs.getString("nombre");
                     String categoria = rs.getString("categoria");
                     String precio = Float.toString(rs.getFloat("precio"));
                     String marca = rs.getString("marca");
-                    datos.add(nombre);
-                    datos.add(categoria);
-                    datos.add(precio);
-                    datos.add(marca);                                                        
-                }
+                    temp.add(nombre);
+                    temp.add(categoria);
+                    temp.add(precio);
+                    temp.add(marca);                                                        
+                    datos.add(temp);
+                }               
                 return datos; 
             } catch (SQLException ex) {
                 System.out.println("Error al no encontrar el producto en la db");
                 System.out.println(ex);
             }
-        } else if (modo.equals("descripción1")) {
-            //con la descripcion
+        } else if (modo.equals("descripción")) {
+            System.out.println("antes del try para articulo");
+            try {
+                System.out.println("entra a la descripcion");
+                PreparedStatement pst = conexion.prepareStatement("SELECT * FROM t_articulo WHERE descripcion LIKE ?");
+                pst.setString(1, "%"+campo+"%");
+                ResultSet rs = pst.executeQuery();
+                System.out.println("ejecucion del query");
+                while (rs.next()) {
+                    LinkedList<String> temp = new LinkedList<String>();
+                    String nombre = rs.getString("nombre");
+                    String categoria = rs.getString("categoria");
+                    String precio = Float.toString(rs.getFloat("precio"));
+                    String marca = rs.getString("marca");
+                    temp.add(nombre);
+                    temp.add(categoria);
+                    temp.add(precio);
+                    temp.add(marca);                                                        
+                    datos.add(temp);
+                }               
+                return datos; 
+            } catch (SQLException ex) {
+                System.out.println("Error al no encontrar el producto en la db");
+                System.out.println(ex);
+            }
         } else if (modo.equals("categoría")) {
-            //con la categoria
+            System.out.println("antes del try para articulo");
+            try {
+                System.out.println("entra a la categoria");
+                PreparedStatement pst = conexion.prepareStatement("SELECT * FROM t_articulo WHERE categoria = ?");
+                pst.setString(1, campo);
+                ResultSet rs = pst.executeQuery();
+                System.out.println("ejecucion del query");
+                while (rs.next()) {
+                    LinkedList<String> temp = new LinkedList<String>();
+                    String nombre = rs.getString("nombre");
+                    String categoria = rs.getString("categoria");
+                    String precio = Float.toString(rs.getFloat("precio"));
+                    String marca = rs.getString("marca");
+                    temp.add(nombre);
+                    temp.add(categoria);
+                    temp.add(precio);
+                    temp.add(marca);                                                        
+                    datos.add(temp);
+                }               
+                return datos; 
+            } catch (SQLException ex) {
+                System.out.println("Error al no encontrar el producto en la db");
+                System.out.println(ex);
+            }
         }
         return null;
+    }
+    
+    public void agregarClienteDB(String nombre,String apellido,Date fech_nac,String telefono,String direccion, String correo){        
+        establecerConexion();
+        try {               
+            PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_cliente (nombre, apellido, fecha_nacimiento, telefono, direccion, correo) VALUES (?,?,?,?,?,?)");
+            pst.setString(1, nombre);
+            pst.setString(2,apellido);                      
+            pst.setDate(3, fech_nac);
+            pst.setString(4, telefono);
+            pst.setString(5, direccion);
+            pst.setString(6, correo);            
+            int res = pst.executeUpdate();                
+            if (res > 0) {
+                JOptionPane.showMessageDialog(null, "Cliente ingresado éxitosamente en el sistema");
+                System.out.println("ususario bien");             
+            } else {
+                JOptionPane.showMessageDialog(null, "Cliente no ingresado éxitosamente en el sistema");
+                System.out.println("usuario mal");               
+            }
+        } catch (SQLException ex) {            
+            JOptionPane.showMessageDialog(null, "Cliente no ingresado éxitosamente en el sistema");
+            System.out.println("usuario mal");
+            System.out.println(ex.getMessage());            
+        }        
     }
 }

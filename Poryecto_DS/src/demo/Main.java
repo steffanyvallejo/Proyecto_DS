@@ -26,7 +26,7 @@ public class Main {
          */
         Cliente c = new Cliente();
         Vendedor v = new Vendedor();
-        v.agregarCliente(c);
+        //v.agregarCliente(c);
         VendedorEditarVenta ve = new VendedorEditarVenta(v);
         ve.operacion(v);
 
