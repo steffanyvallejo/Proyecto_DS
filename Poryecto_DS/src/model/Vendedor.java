@@ -19,10 +19,10 @@ public class Vendedor extends Empleado {
     public Vendedor() {
     }
 
-    public void agregarCliente(String nombre,String apellido,Date fech_nac,String telefono,String direccion, String correo) {
+    public void agregarCliente(String nombre,String apellido,String cedula, Date fech_nac,String telefono,String direccion, String correo) {
         System.out.println("agregando cliente ...");
         cn = new ConexionDBM();
-        cn.agregarClienteDB(nombre, apellido, fech_nac, telefono, direccion, correo);
+        cn.agregarClienteDB(nombre, apellido, cedula, fech_nac, telefono, direccion, correo);
     }
 
     /**
@@ -46,9 +46,11 @@ public class Vendedor extends Empleado {
      * @param c Cliente
      * @return
      */
-    public boolean consultarCliente(Cliente c) {
+    public LinkedList<String> consultarCliente(String cedula) {
         System.out.println("consulta cliente ...");
-        return false;
+        cn = new ConexionDBM();
+        LinkedList<String>datos = cn.consultarClienteDB(cedula);
+        return datos;
     }
 
     /**

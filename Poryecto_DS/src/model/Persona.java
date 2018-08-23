@@ -13,14 +13,21 @@ public abstract class Persona {
 	public Persona() {
 	}
         protected String id;
-
-    
 	protected String nombre;
 	protected String apellido;
 	protected Date fechaNacimiento;
 	protected String numeroTelefonico;
 	protected String direcciónDomicilio;
 	protected String correoElectronico;
+        protected String cedula;
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
 
     public String getNombre() {
         return nombre;
