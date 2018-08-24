@@ -38,23 +38,6 @@ create table usuario(
     );
 
 
-create table pagoCredito(
-	PC_ID int AUTO_INCREMENT primary key,
-    PC_Fecha date,
-    PC_Subtotal float,
-    PC_Impuestos float,
-    PC_PagoCorriente boolean,
-    PC_PagoDiferido boolean,
-    PC_MesesDiferidos int);
-    
-create table pagoEfectivo(
-	PE_ID int AUTO_INCREMENT primary key,
-    PE_Fecha date,
-    PE_Subtotal float,
-    PE_Impuestos float
-    );
-    
-
 create table venta(
 	Venta_ID int AUTO_INCREMENT primary key,
 	Venta_Fecha date,
@@ -63,13 +46,31 @@ create table venta(
 	Venta_Total double,
     Cliente_ID int,
     Usua_ID int,
-    pagoEfectivo_ID int,
-    pagoCredito_ID int,
     foreign key(Cliente_ID)references cliente(Cli_Cedula),
-    foreign key(Usua_ID)references usuario(Usua_Codigo),
-    foreign key(pagoEfectivo_ID)references pagoEfectivo(PE_ID),
-    foreign key(pagoCredito_ID)references pagoCredito(PC_ID)
+    foreign key(Usua_ID)references usuario(Usua_Codigo)
     );
+
+create table pagoCredito(
+	PC_ID int AUTO_INCREMENT primary key,
+    PC_Fecha date,
+    PC_Subtotal float,
+    PC_Impuestos float,
+    PC_PagoCorriente boolean,
+    PC_PagoDiferido boolean,
+    PC_MesesDiferidos int,
+    PC_VentaID int,
+    foreign key(PC_VentaID) references venta(Venta_ID)
+    );
+    
+create table pagoEfectivo(
+	PE_ID int AUTO_INCREMENT primary key,
+    PE_Fecha date,
+    PE_Subtotal float,
+    PE_Impuestos float,
+    PE_VentaID int,
+    foreign key(PE_VentaID) references venta(Venta_ID)
+    );
+    
     
 create table detalle_venta(
 	Detalle_ID int AUTO_INCREMENT primary key,
