@@ -3,7 +3,7 @@ create database lineaBlanca;
 use lineaBlanca;
 
 create table t_cliente(
-    Cli_id int auto_increment primary key		
+    Cli_id int auto_increment primary key,		
     Cli_Cedula varchar(10) unique not null,
     Cli_Nombre varchar(50) not null,
     Cli_Apellido varchar(50) not null,
@@ -47,6 +47,23 @@ CREATE TABLE t_usuario(
   foreign key(Local_ID) references t_sucursal(Local_ID) 
 );
 
+create table t_pagoCredito(
+	PC_ID int AUTO_INCREMENT primary key,
+    PC_Fecha date not null,
+    PC_Subtotal float not null,
+    PC_Impuestos float not null,
+    PC_PagoCorriente boolean not null,
+    PC_PagoDiferido boolean not null,
+    PC_MesesDiferidos int
+);
+
+create table t_pagoEfectivo(
+	PE_ID int AUTO_INCREMENT primary key,
+    PE_Fecha date not null,
+    PE_Subtotal float not null,
+    PE_Impuestos float not null
+);
+
 create table t_venta(
 	Venta_ID int AUTO_INCREMENT primary key,
 	Venta_Fecha date not null,
@@ -63,22 +80,7 @@ create table t_venta(
     foreign key(id_PagoC)references t_pagoCredito(PC_ID)
 );
 
-create table t_pagoCredito(
-	PC_ID int AUTO_INCREMENT primary key,
-    PC_Fecha date not null,
-    PC_Subtotal float not null,
-    PC_Impuestos float not null,
-    PC_PagoCorriente boolean not null,
-    PC_PagoDiferido boolean not null,
-    PC_MesesDiferidos int
-);
-    
-create table t_pagoEfectivo(
-	PE_ID int AUTO_INCREMENT primary key,
-    PE_Fecha date not null,
-    PE_Subtotal float not null,
-    PE_Impuestos float not null
-);
+
     
     
 create table t_detalle_venta(
@@ -106,5 +108,3 @@ create table t_detalleCotizacion(
 	foreign key(Articulo_ID)references t_articulo(Art_ID),
     foreign key(Cot_ID)references t_cotizacion(Cot_ID)
     );
-
-    
