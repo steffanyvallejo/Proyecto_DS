@@ -9,7 +9,7 @@ public class Cotizacion extends Responsability {
 
 	
 	public Cotizacion(Articulo a, int cantidad) {
-            this.idArticulo=a.idArticulo;
+            //this.idArticulo=a.idArticulo;
             this.cantArticulo=cantidad;
             
 	}

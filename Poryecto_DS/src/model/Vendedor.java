@@ -1,6 +1,6 @@
 package model;
 
-import controller.ConexionDB;
+
 import controller.ConexionDBM;
 import java.sql.Date;
 import java.util.LinkedList;

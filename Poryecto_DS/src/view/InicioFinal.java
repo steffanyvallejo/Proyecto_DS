@@ -5,7 +5,6 @@
  */
 package view;
 
-import controller.ConexionDB;
 import controller.ConexionDBM;
 import java.awt.Color;
 import java.awt.Image;
