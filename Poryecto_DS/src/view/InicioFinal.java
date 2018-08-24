@@ -6,6 +6,7 @@
 package view;
 
 import controller.ConexionDB;
+import controller.ConexionDBM;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -25,7 +26,7 @@ public class InicioFinal extends javax.swing.JFrame {
      * Creates new form InicioFinal
      */
     
-    private ConexionDB cn;
+    private ConexionDBM cn;
     
     public InicioFinal() {
         getContentPane().setBackground(Color.white);
@@ -41,7 +42,6 @@ public class InicioFinal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        gerenteView1 = new view.GerenteView();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -144,7 +144,7 @@ public class InicioFinal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String user = jTextField1.getText();
         String pass = jPasswordField1.getText();
-        cn = new ConexionDB();
+        cn = new ConexionDBM();
         Empleado emp = cn.login(user, pass);
         if(emp==null){
             jLabel4.setText("Usuario o contraseña inválido");
@@ -214,7 +214,6 @@ public class InicioFinal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private view.GerenteView gerenteView1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

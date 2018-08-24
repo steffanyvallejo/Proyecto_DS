@@ -1,5 +1,10 @@
 package model;
 
+import controller.ConexionDB;
+import controller.ConexionDBM;
+import java.sql.Date;
+import java.util.LinkedList;
+
 /**
  *
  */
@@ -8,11 +13,16 @@ public class Vendedor extends Empleado {
     /**
      * Default constructor
      */
+    
+    private ConexionDBM cn;
+    
     public Vendedor() {
     }
 
-    public void agregarCliente(Cliente c) {
+    public void agregarCliente(String nombre,String apellido,String cedula, Date fech_nac,String telefono,String direccion, String correo) {
         System.out.println("agregando cliente ...");
+        cn = new ConexionDBM();
+        cn.agregarClienteDB(nombre, apellido, cedula, fech_nac, telefono, direccion, correo);
     }
 
     /**
@@ -36,18 +46,24 @@ public class Vendedor extends Empleado {
      * @param c Cliente
      * @return
      */
-    public boolean consultarCliente(Cliente c) {
+    public LinkedList<String> consultarCliente(String cedula) {
         System.out.println("consulta cliente ...");
-        return false;
+        cn = new ConexionDBM();
+        LinkedList<String>datos = cn.consultarClienteDB(cedula);
+        return datos;
     }
 
     /**
      * @param a Articulo
      * @return
      */
-    public boolean consultarArticulo(Articulo a) {
+    public LinkedList<LinkedList<String>> consultarArticulo(String modo, String campo) {
         System.out.println("consulta articulo ...");
-        return false;
+        cn = new ConexionDBM();
+        System.out.println(modo);
+        System.out.println(campo);
+        LinkedList<LinkedList<String>> datos = cn.consultarArticulo(modo, campo);
+        return datos;
     }
     
     public void pedirPermiso(NotificacionPeticion np){

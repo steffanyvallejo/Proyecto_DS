@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.14
 -- Dumped by pg_dump version 9.5.14
 
--- Started on 2018-08-18 01:14:06
+-- Started on 2018-08-18 23:32:09
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -46,11 +46,11 @@ CREATE TABLE public.t_articulo (
     id_art integer NOT NULL,
     nombre character varying(50) NOT NULL,
     descripcion character varying(100) NOT NULL,
-    categoria date NOT NULL,
     stock integer NOT NULL,
     estado boolean NOT NULL,
     precio double precision NOT NULL,
-    marca character varying(50) NOT NULL
+    marca character varying(50) NOT NULL,
+    categoria character varying(50) NOT NULL
 );
 
 
@@ -442,7 +442,8 @@ ALTER TABLE ONLY public.t_venta ALTER COLUMN id_venta SET DEFAULT nextval('publi
 -- Data for Name: t_articulo; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.t_articulo (id_art, nombre, descripcion, categoria, stock, estado, precio, marca) FROM stdin;
+COPY public.t_articulo (id_art, nombre, descripcion, stock, estado, precio, marca, categoria) FROM stdin;
+1	CocinaI	Cocina con energia electrica	5	t	25	Indurama	cocina
 \.
 
 
@@ -452,7 +453,7 @@ COPY public.t_articulo (id_art, nombre, descripcion, categoria, stock, estado, p
 -- Name: t_articulo_id_art_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.t_articulo_id_art_seq', 1, false);
+SELECT pg_catalog.setval('public.t_articulo_id_art_seq', 2, true);
 
 
 --
@@ -559,6 +560,7 @@ SELECT pg_catalog.setval('public.t_pagoefectivo_id_pagoc_seq', 1, false);
 
 COPY public.t_usuario (id_user, nombre, apellido, fecha_nacimiento, telefono, direccion, correo, usuario, pass, tipo, super, id_local) FROM stdin;
 1	Emilio	Moran	1997-06-04	0992008705	Norte	emilio@gmail.com	emilio97	emilio	v	f	1
+2	Moises	Moran	1995-07-19	0912345678	Balzar	momo@gmail.com	momo	momo	g	f	1
 \.
 
 
@@ -568,7 +570,7 @@ COPY public.t_usuario (id_user, nombre, apellido, fecha_nacimiento, telefono, di
 -- Name: t_usuario_id_user_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.t_usuario_id_user_seq', 1, true);
+SELECT pg_catalog.setval('public.t_usuario_id_user_seq', 2, true);
 
 
 --
@@ -755,7 +757,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2018-08-18 01:14:08
+-- Completed on 2018-08-18 23:32:11
 
 --
 -- PostgreSQL database dump complete

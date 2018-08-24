@@ -26,7 +26,7 @@ public class Main {
          */
         Cliente c = new Cliente();
         Vendedor v = new Vendedor();
-        v.agregarCliente(c);
+        //v.agregarCliente(c);
         VendedorEditarVenta ve = new VendedorEditarVenta(v);
         ve.operacion(v);
 
@@ -45,15 +45,7 @@ public class Main {
         FormaPago formadePago= new FormaPago();
         formadePago.FormaDePago(new Credito());
         formadePago.pago(new Credito());
-        v.vender(a);
-                        
-        cn = new ConexionDB();
-        Vendedor vendedor = (Vendedor)cn.login("emilio", "emilio");
-        System.out.println(vendedor.getNombre());
-        
-        
-        
-        
+        v.vender(a);                                                      
     }
     /**
      * Default constructor

@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 
  */
-public class Lavadora{
+public class Lavadora extends Articulo{
 
 	/**
 	 * Default constructor
