@@ -26,7 +26,7 @@ import java.util.Calendar;
  */
 public class ConexionDBM {
 
-    private final String URL = "jdbc:mysql://localhost:3306/DB_lineaBlanca";
+    private final String URL = "jdbc:mysql://localhost:3306/lineaBlanca";
     private final String USERNAME = "root";
     private final String PASSWORD = "root";
 
