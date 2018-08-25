@@ -22,7 +22,7 @@ public class CocinaInduccion extends Articulo {
     }
 
     @Override
-    public String gettDescripcion() {
+    public String getDescripcion() {
         return this.descripcion;
     }
 

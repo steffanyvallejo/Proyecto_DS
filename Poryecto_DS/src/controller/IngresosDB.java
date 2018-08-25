@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
+import model.Articulo;
 import model.Credito;
 import model.Efectivo;
 import model.FormaPago;
@@ -221,5 +222,31 @@ public class IngresosDB {
                 System.out.println(ex.getMessage());
             }
         }
-    }    
+    }
+    public void agregarArticuloDB(Articulo articulo) {
+        int idArt= getIDArt(articulo.getModelo());
+        try {
+            PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_cliente (Art_Modelo, Art_Descripcion,Art_Precio, Art_Stock,Art_Categ, Art_Marca, Art_Color) VALUES (?,?,?,?,?,?,?)");
+            pst.setString(1, articulo.getModelo());
+            pst.setString(2, articulo.getDescripcion());
+            pst.setFloat(3, articulo.getPrecio());
+            pst.setInt(4, articulo.getStock());
+            pst.setString(5, articulo.getCategoria() );
+            pst.setString(6, articulo.getMarca());
+            pst.setString(7, articulo.getColor());
+            int res = pst.executeUpdate();
+            if (res > 0) {
+                JOptionPane.showMessageDialog(null, "Articulo registrado con éxito");
+                System.out.println("articulo bien");
+            } else {
+                JOptionPane.showMessageDialog(null, "Articulo no registrado con éxito");
+                System.out.println("articulo mal");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error en el sistema");
+            System.out.println("art mal");
+            System.out.println(ex.getMessage());
+        }
+    }
+    
 }

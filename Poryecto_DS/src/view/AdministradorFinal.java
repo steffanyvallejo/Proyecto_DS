@@ -571,7 +571,6 @@ public class AdministradorFinal extends javax.swing.JFrame {
         int cantidad = Integer.parseInt(stock.getText());
         art = factory.crearArticulo(modelo.getText(), marca.getText(), categoriaArticulo, color, precio, cantidad);
         if ("Refrigeradora".equalsIgnoreCase(categoriaArticulo)) {
-
             cambiarValores("Altura", "Numero de puertas");
         } else if ("lavadora".equalsIgnoreCase(categoriaArticulo)) {
             cambiarValores("Capacidad de carga", "Tipo");
@@ -606,20 +605,20 @@ public class AdministradorFinal extends javax.swing.JFrame {
             r.setAltura(Integer.parseInt(campo1.getText()));
             r.setNumPuertas(Integer.parseInt(campo2.getText()));
             r.setDescripcion();
-            System.out.println(r.gettDescripcion());
+            System.out.println(r.getDescripcion());
         } else if ("Cocina".equalsIgnoreCase(categoriaArticulo)) {
             CocinaInduccion c = (CocinaInduccion) art;
             c.setNumHornillas(Integer.parseInt(campo1.getText()));
             c.setTieneHorno(siHorno.isSelected());
             c.setDescripcion();
-            System.out.println(c.gettDescripcion());
+            System.out.println(c.getDescripcion());
         }
-        if ("Refrigeradora".equalsIgnoreCase(categoriaArticulo)) {
+        if ("Lavadora".equalsIgnoreCase(categoriaArticulo)) {
             Lavadora l = (Lavadora) art;
             l.setCapacidadCarga(Integer.parseInt(campo1.getText()));
             l.setTipo(campo2.getText());
             l.setDescripcion();
-            System.out.println(l.gettDescripcion());
+            System.out.println(l.getDescripcion());
         }
         JOptionPane.showMessageDialog(null, "Registro exitoso");
 

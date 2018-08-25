@@ -32,9 +32,23 @@ public abstract class Articulo {
     }
 
     public abstract void setDescripcion();
-     public abstract String gettDescripcion();
+     public abstract String getDescripcion();
     public abstract int getStock();
     public abstract float getPrecio();
+
+   
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getColor() {
+        return color;
+    }
     
 
 }

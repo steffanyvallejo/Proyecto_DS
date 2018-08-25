@@ -1,15 +1,18 @@
 package model;
 
+import controller.IngresosDB;
 import java.util.LinkedList;
 
 /**
  *
  */
 public class Administrador extends Empleado implements PeticionPermiso{
-    
+    IngresosDB ingreso= new IngresosDB();
     public Administrador() {
     }
-
+    public void agregarArticulo(Articulo a){
+        ingreso.agregarArticuloDB(a);
+    }
     public void manejarTransacciones() {
         // TODO implement here
     }
