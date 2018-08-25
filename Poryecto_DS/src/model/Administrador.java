@@ -1,5 +1,7 @@
 package model;
 
+import java.util.LinkedList;
+
 /**
  *
  */
@@ -75,6 +77,16 @@ public class Administrador extends Empleado implements PeticionPermiso{
     public void update() {
         System.out.println("Administrador:");
         System.out.println("Concebir permiso ...");
+    }
+
+    @Override
+    public LinkedList<LinkedList<String>> consultarArticulo(String modo, String campo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public LinkedList<String> consultarCliente(String cedula) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

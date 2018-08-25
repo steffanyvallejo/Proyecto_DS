@@ -13,6 +13,15 @@ public abstract class Articulo {
     protected String marca;
     protected String color;
 
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+
     public Articulo(String modelo, String marca, String categoria, String color, float precio, int stock) {
         this.modelo = modelo;
         this.categoria = categoria;

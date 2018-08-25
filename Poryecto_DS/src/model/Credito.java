@@ -3,47 +3,39 @@ package model;
 import java.util.*;
 
 /**
- * 
+ *
  */
-public class Credito extends Pago implements PagoStrategy{
+public class Credito extends FormaPago implements PagoStrategy{
 
-	/**
-	 * Default constructor
-	 */
-	public Credito() {
-	}
+    private String modo;
+    private int mesesDiferido;
 
-	/**
-	 * 
-	 */
-	private long numeroTarjetaCredito;
+    public Credito() {
+    }        
+    
+    public Credito(String modo, int mesesDiferido) {      
+        this.modo = modo;
+        this.mesesDiferido = mesesDiferido;
+    }
 
-	/**
-	 * 
-	 */
-	private Date fechaDeExpedicion;
+    public String getModo() {
+        return modo;
+    }
 
-	/**
-	 * 
-	 */
-	private String nombre;
+    public void setModo(String modo) {
+        this.modo = modo;
+    }
 
-	/**
-	 * @param double total 
-	 * @return
-	 */
-	private boolean realizarCargo(double total) {
-		// TODO implement here
-		return false;
-	}
+    public int getMesesDiferido() {
+        return mesesDiferido;
+    }
 
-	/**
-	 * 
-	 */
-	public void pagar() {
-		// TODO implement here
-                System.out.println("Pagando con tarjeta de crédito...");
-	}
+    public void setMesesDiferido(int mesesDiferido) {
+        this.mesesDiferido = mesesDiferido;
+    }
 
-
+    @Override
+    public void pagar(float total) {
+        System.out.println("Pagando con tarjeta de crédito...");
+    }
 }

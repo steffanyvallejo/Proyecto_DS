@@ -1,15 +1,15 @@
 package demo;
 
+import java.text.SimpleDateFormat;
+import model.Venta;
 
-import model.Cliente;
-import model.Vendedor;
-import model.VendedorEditarVenta;
-import model.Administrador;
-import model.Articulo;
-import model.CocinaInduccion;
-import model.Credito;
-import model.FormaPago;
-import model.NotificacionPeticion;
+public class Main{
+    
+    
+    
+    
+}
+
 
 
 

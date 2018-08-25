@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.CargasDB;
 import controller.ConexionDBM;
 import java.awt.Color;
 import java.awt.Image;
@@ -26,9 +27,11 @@ public class InicioFinal extends javax.swing.JFrame {
      */
     
     private ConexionDBM cn;
+    private CargasDB cargas;
     
     public InicioFinal() {
         getContentPane().setBackground(Color.white);
+        this.cargas=new CargasDB();
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -143,9 +146,8 @@ public class InicioFinal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String user = jTextField1.getText();
-        String pass = jPasswordField1.getText();
-        cn = new ConexionDBM();
-        Empleado emp = cn.login(user, pass);
+        String pass = jPasswordField1.getText();        
+        Empleado emp = cargas.login(user, pass);
         if(emp==null){
             jLabel4.setText("Usuario o contraseña inválido");
             jLabel4.setVisible(true);

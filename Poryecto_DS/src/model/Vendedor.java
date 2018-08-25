@@ -2,6 +2,8 @@ package model;
 
 
 import controller.ConexionDBM;
+import controller.ConsultasDB;
+import controller.IngresosDB;
 import java.sql.Date;
 import java.util.LinkedList;
 
@@ -10,59 +12,47 @@ import java.util.LinkedList;
  */
 public class Vendedor extends Empleado {
 
-    /**
-     * Default constructor
-     */
-    
-    private ConexionDBM cn;
-    
+    private ConsultasDB consultas;
+    private IngresosDB ingresos;
+   
     public Vendedor() {
+        this.consultas=new ConsultasDB();
+        this.ingresos=new IngresosDB();
     }
 
     public void agregarCliente(String nombre,String apellido,String cedula, Date fech_nac,String telefono,String direccion, String correo) {
-        System.out.println("agregando cliente ...");
-        cn = new ConexionDBM();
-        cn.agregarClienteDB(nombre, apellido, cedula, fech_nac, telefono, direccion, correo);
+        System.out.println("agregando cliente ...");        
+        ingresos.agregarClienteDB(nombre, apellido, cedula, fech_nac, telefono, direccion, correo);
     }
 
-    /**
-     * @param Articulo
-     * @return
-     */
+    
     public float cotizar(Articulo a) {
         System.out.println("cotizando producto ...");
         return 0.0f;
     }
-
-    /**
-     * @param Articulo
-     * @return
-     */
-    public void vender(Articulo a) {
+    
+    public void realizarVenta(Venta venta, Vendedor vendedor, String cedulaCliente, LinkedList<String> productosComprados, FormaPago fpago){
         System.out.println("vendiendo producto ...");
+        ingresos.ingresarVentaDB(venta, vendedor, cedulaCliente);
+        ingresos.ingresarPago(venta, fpago);
+        ingresos.ingresarDetallesVenta(venta, productosComprados);
+        
     }
 
-    /**
-     * @param c Cliente
-     * @return
-     */
+    
+    @Override
     public LinkedList<String> consultarCliente(String cedula) {
-        System.out.println("consulta cliente ...");
-        cn = new ConexionDBM();
-        LinkedList<String>datos = cn.consultarClienteDB(cedula);
+        System.out.println("consulta cliente ...");        
+        LinkedList<String>datos = consultas.consultarClienteDB(cedula);
         return datos;
     }
 
-    /**
-     * @param a Articulo
-     * @return
-     */
+    @Override
     public LinkedList<LinkedList<String>> consultarArticulo(String modo, String campo) {
-        System.out.println("consulta articulo ...");
-        cn = new ConexionDBM();
+        System.out.println("consulta articulo ...");        
         System.out.println(modo);
         System.out.println(campo);
-        LinkedList<LinkedList<String>> datos = cn.consultarArticulo(modo, campo);
+        LinkedList<LinkedList<String>> datos = consultas.consultarArticulo(modo, campo);
         return datos;
     }
     
@@ -71,5 +61,4 @@ public class Vendedor extends Empleado {
         //NotificacionPeticion np = new NotificacionPeticion();
         np.notifyObservers();
     }
-
 }

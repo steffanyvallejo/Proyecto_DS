@@ -3,28 +3,15 @@ package model;
 import java.util.*;
 
 /**
- * 
+ *
  */
-public class Efectivo extends Pago implements PagoStrategy {
+public class Efectivo extends FormaPago implements PagoStrategy {
 
-	/**
-	 * Default constructor
-	 */
-	public Efectivo() {
-	}
+    public Efectivo() {
+    }
 
-	/**
-	 * 
-	 */
-	private double cantidad;
-
-	/**
-	 * 
-	 */
-	public void pagar() {
-		// TODO implement here
-                System.out.println("Pagando en efectivo...");
-	}
-
-
+    @Override
+    public void pagar(float total) {        
+        System.out.println("Pagando en efectivo...");
+    }
 }

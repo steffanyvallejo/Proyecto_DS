@@ -1,11 +1,12 @@
 package model;
 
-import java.util.Date;
+import java.util.LinkedList;
+
 
 /**
  *
  */
-public class Empleado extends Persona {
+public abstract class Empleado extends Persona {
 
     /**
      * Default constructor
@@ -53,18 +54,7 @@ public class Empleado extends Persona {
         this.contraseña = contraseña;
     }
 
-    /**
-     *
-     */
+    public abstract LinkedList<LinkedList<String>> consultarArticulo(String modo, String campo);
     
-
-    /**
-     * @param uuario
-     * @param contraseña
-     * @return
-     */
-    public void autenticar(String uuario, String contraseña) {
-        // TODO implement here
-    }
-
+    public abstract LinkedList<String> consultarCliente(String cedula);
 }

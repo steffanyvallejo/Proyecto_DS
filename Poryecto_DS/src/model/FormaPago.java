@@ -3,37 +3,21 @@ package model;
 import java.util.*;
 
 /**
- * 
+ *
  */
 public class FormaPago {
 
-	/**
-	 * Default constructor
-	 */
-	public FormaPago() {
-	}
-
-	/**
-	 * 
-	 */
-	private PagoStrategy strategy;
-
-
-
-	/**
-     * @param strategy
-	 */
-	public void FormaDePago(PagoStrategy strategy) {
-		// TODO implement here
-                this.strategy=strategy;
-	}
-
-	/**
-	 * @param pago
-	 */
-	public void pago(Pago pago) {
-		// TODO implement here
-                strategy.pagar();
-	}
-
+    private PagoStrategy strategy;
+    
+    public FormaPago() {        
+    }
+    
+    public void pagar(String modo, float total){
+        if(modo.equals("EFECTIVO")){
+            strategy = new Efectivo();
+        }else if(modo.equals("CREDITO")){
+            strategy = new Credito();
+        }
+        strategy.pagar(total);
+    }
 }

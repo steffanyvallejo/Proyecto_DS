@@ -1,6 +1,8 @@
 package model;
 
 import controller.ConexionDBM;
+import controller.ConsultasDB;
+import controller.ReportesDB;
 import java.util.*;
 
 /**
@@ -11,65 +13,52 @@ public class Gerente extends Empleado {
     /**
      * Default constructor
      */
-    ConexionDBM cn;
+    
+    private ConsultasDB consultas;
+    private ReportesDB reportes;
 
     public Gerente() {
+        this.consultas=new ConsultasDB();
+        this.reportes=new ReportesDB();
     }
 
-    /**
-     * @param c Cliente
-     * @return
-     */
+    @Override
     public LinkedList<String> consultarCliente(String cedula) {
-        System.out.println("consulta cliente ...");
-        cn = new ConexionDBM();
-        LinkedList<String>datos = cn.consultarClienteDB(cedula);
+        System.out.println("consulta cliente ...");        
+        LinkedList<String>datos = consultas.consultarClienteDB(cedula);
         return datos;
     }
-
-    /**
-     * @param a Articulo
-     * @return
-     */
+    
+    @Override
     public LinkedList<LinkedList<String>> consultarArticulo(String modo, String campo) {
-        System.out.println("consulta articulo ...");
-        cn = new ConexionDBM();
+        System.out.println("consulta articulo ...");        
         System.out.println(modo);
         System.out.println(campo);
-        LinkedList<LinkedList<String>> datos = cn.consultarArticulo(modo, campo);
+        LinkedList<LinkedList<String>> datos = consultas.consultarArticulo(modo, campo);
         return datos;
     }
 
-    /**
-     * @param t Transaccion
-     * @return
-     */
     public boolean consultaTransaccion(Transaccion t) {
         // TODO implement here
         return false;
     }
 
-    /**
-     * @return
-     */
     public LinkedList<Transaccion> generarReporte() {
         // TODO implement here
         return null;
     }
     
-    public LinkedList<LinkedList<String>> generarReporteVendedor(){
-        cn = new ConexionDBM();
+    public LinkedList<LinkedList<String>> generarReporteVendedor(){        
         System.out.println("Entra a grv");
         LinkedList<LinkedList<String>> datos = new LinkedList<LinkedList<String>>();
-        datos = cn.reporteVendedor();
+        datos = reportes.reporteVendedor();
         return datos;
     }
     
-    public LinkedList<LinkedList<String>> generarReporteArticulo(){
-        cn = new ConexionDBM();
+    public LinkedList<LinkedList<String>> generarReporteArticulo(){        
         System.out.println("Entra a grv");
         LinkedList<LinkedList<String>> datos = new LinkedList<LinkedList<String>>();
-        datos = cn.reporteArticulo();
+        datos = reportes.reporteArticulo();
         return datos;
     }
 

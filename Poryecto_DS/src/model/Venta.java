@@ -1,64 +1,65 @@
 package model;
 
+
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * 
+ *
  */
-public class Venta extends Responsability {
+public class Venta {
+    
+    private String codigo;
+    private Date fecha;
+    private float subtotal;
+    private float total;
+    private final float iva=(float) 0.12;
+    private FormaPago pago;
+    
+    public Venta() {
+        
+    }
 
-	/**
-	 * Default constructor
-	 */
-	public Venta() {
-	}
+    public String getCodigo() {
+        return codigo;
+    }
+    
+    public FormaPago getPago(){
+        return this.pago;
+    }
+    
+    public Venta(Date fecha, float subtotal, float total) {
+        this.fecha = fecha;
+        this.subtotal = subtotal;
+        this.total = total;        
+        SimpleDateFormat formateador1 = new SimpleDateFormat("yyyyMMddhhmmss");                        
+        java.util.Date ahora = new java.util.Date();        
+        String ahoraS = formateador1.format(ahora);
+        this.codigo=ahoraS;
+    }        
+    
+    public double calcularValorTotal() {
+        return this.total=this.subtotal+this.subtotal*this.iva;
+    }
+    
+    public void generarPago(String modo){
+        pago = new FormaPago();
+        pago.pagar(modo, total);       
+    }
 
-	/**
-	 * 
-	 */
-	private float valor;
+    public Date getFecha() {
+        return fecha;
+    }
 
-	/**
-	 * 
-	 */
-	private Enum formaDePago;
+    public void setFecha() {
+        this.fecha = new Date();
+    }    
 
-	/**
-	 * 
-	 */
-	private Date fecha;
+    public float getSubtotal() {
+        return subtotal;
+    }
 
-	/**
-	 * 
-	 */
-	private int idArticulo;
-
-
-
-
-
-
-
-	/**
-	 * @return
-	 */
-	public double calcularValorTotal() {
-		// TODO implement here
-		return 0.0d;
-	}
-
-	/**
-	 * @return
-	 */
-	public void setNextResponsability() {
-		// TODO implement here
-	}
-
-	/**
-	 * @return
-	 */
-	public void registrarTransacción() {
-		// TODO implement here
-	}
-
+    public void setSubtotal(float subtotal) {
+        this.subtotal = subtotal;
+    }
 }

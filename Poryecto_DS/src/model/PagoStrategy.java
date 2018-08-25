@@ -6,12 +6,5 @@ import java.util.*;
  * 
  */
 public interface PagoStrategy {
-
-
-
-	/**
-	 * 
-	 */
-	public void pagar();
-
+	public void pagar(float total);
 }
