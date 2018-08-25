@@ -798,7 +798,7 @@ public class VendedorFinal extends javax.swing.JFrame {
         }
         listModel.addElement(art);
         float valor=0;
-        for(int i=0; i<articulos.size();i++){
+       /* for(int i=0; i<articulos.size();i++){
             if(articulos.get(i).getNombre().equals(art))
                 valor=articulos.get(i).getPrecio();
         }
@@ -825,7 +825,7 @@ public class VendedorFinal extends javax.swing.JFrame {
             jLabel27.setVisible(false);
             jLabel28.setVisible(false);
             jLabel29.setVisible(false);
-        }
+        }*/
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
