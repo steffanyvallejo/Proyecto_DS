@@ -21,6 +21,7 @@ import model.Efectivo;
 import model.FormaPago;
 import model.PagoStrategy;
 import model.Vendedor;
+import model.VendedorEditarVenta;
 import model.Venta;
 
 /**
@@ -38,20 +39,20 @@ public class VendedorFinal extends javax.swing.JFrame {
     private CargasDB cargas;
     private PanelConsultaArticulo panelCA;
     private PanelConsultaCliente panelCC;
+    private PanelEdicionVenta panelEV;
     
     public VendedorFinal(Vendedor vendedor) {        
         getContentPane().setBackground(Color.white);
         this.vendedor = vendedor;
         this.panelCA=new PanelConsultaArticulo(vendedor);
-        this.panelCC=new PanelConsultaCliente(vendedor);
+        this.panelCC=new PanelConsultaCliente(vendedor);        
         this.cargas=new CargasDB();
         listModel= new DefaultListModel<>();
         articulos = cargas.cargarArticulos();
         initComponents();
         for(Articulo a: articulos){
             System.out.println(a.getModelo());
-        }
-        //panelCA.setSize(jTabbedPane1.getSize());
+        }        
         this.setLocationRelativeTo(null);
         jTabbedPane1.addTab("CONSULTA DE PRODUCTOS", panelCA);        
         jTabbedPane2.addTab("CONSULTAR", panelCC);
@@ -690,6 +691,9 @@ public class VendedorFinal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         JOptionPane.showMessageDialog(null, "PERMISO CONCEDIDO POR UN ADMINISTRADOR");
+        VendedorEditarVenta vendedorEdicion = new VendedorEditarVenta(vendedor);
+        this.panelEV=new PanelEdicionVenta(vendedorEdicion);
+        jTabbedPane3.addTab("EDITAR VENTA", panelEV);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -717,20 +721,6 @@ public class VendedorFinal extends javax.swing.JFrame {
         }else{
             System.out.println("mal");
         }
-        
-        /*
-        if(venta.getPago() instanceof Credito){
-            String modoCredito = (String) jComboBox3.getSelectedItem();
-            int mesesD = (int) jComboBox4.getSelectedItem();
-            Credito credito = new Credito(modoCredito, mesesD);
-            vendedor.realizarVenta(venta, vendedor, cedulaCliente, productosComprados, credito);
-        }else if(venta.getPago() instanceof Efectivo){
-            Efectivo efectivo = new Efectivo();
-            vendedor.realizarVenta(venta, vendedor,cedulaCliente, productosComprados, efectivo);
-        }else{
-            System.out.println("mal");
-        }
-        */
     }//GEN-LAST:event_jButton9ActionPerformed
     
     /**

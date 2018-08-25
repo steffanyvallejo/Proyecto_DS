@@ -1,7 +1,5 @@
 package model;
 
-
-import controller.ConexionDBM;
 import controller.ConsultasDB;
 import controller.IngresosDB;
 import java.sql.Date;
@@ -24,7 +22,6 @@ public class Vendedor extends Empleado {
         System.out.println("agregando cliente ...");        
         ingresos.agregarClienteDB(nombre, apellido, cedula, fech_nac, telefono, direccion, correo);
     }
-
     
     public float cotizar(Articulo a) {
         System.out.println("cotizando producto ...");
