@@ -605,6 +605,7 @@ public class AdministradorFinal extends javax.swing.JFrame {
             r.setAltura(Integer.parseInt(campo1.getText()));
             r.setNumPuertas(Integer.parseInt(campo2.getText()));
             r.setDescripcion();
+            administrador.agregarArticulo(r);
             System.out.println(r.getDescripcion());
         } else if ("Cocina".equalsIgnoreCase(categoriaArticulo)) {
             CocinaInduccion c = (CocinaInduccion) art;
@@ -620,7 +621,7 @@ public class AdministradorFinal extends javax.swing.JFrame {
             l.setDescripcion();
             System.out.println(l.getDescripcion());
         }
-        JOptionPane.showMessageDialog(null, "Registro exitoso");
+        
 
     }//GEN-LAST:event_jButton2ActionPerformed
 

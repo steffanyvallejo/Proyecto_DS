@@ -226,7 +226,7 @@ public class IngresosDB {
     public void agregarArticuloDB(Articulo articulo) {
         int idArt= getIDArt(articulo.getModelo());
         try {
-            PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_cliente (Art_Modelo, Art_Descripcion,Art_Precio, Art_Stock,Art_Categ, Art_Marca, Art_Color) VALUES (?,?,?,?,?,?,?)");
+            PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_articulo (Art_Modelo, Art_Descripcion,Art_Precio, Art_Stock,Art_Categ, Art_Marca, Art_Color) VALUES (?,?,?,?,?,?,?)");
             pst.setString(1, articulo.getModelo());
             pst.setString(2, articulo.getDescripcion());
             pst.setFloat(3, articulo.getPrecio());
