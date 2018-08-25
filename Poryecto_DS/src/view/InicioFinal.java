@@ -30,6 +30,7 @@ public class InicioFinal extends javax.swing.JFrame {
     public InicioFinal() {
         getContentPane().setBackground(Color.white);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

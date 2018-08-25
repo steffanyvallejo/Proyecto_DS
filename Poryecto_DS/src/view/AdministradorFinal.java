@@ -31,6 +31,7 @@ Articulo art;
         getContentPane().setBackground(Color.white);
         this.administrador=administrador;
         initComponents();
+        this.setLocationRelativeTo(null); 
     }
 
     /**

@@ -26,6 +26,7 @@ public class GerenteFinal extends javax.swing.JFrame {
         getContentPane().setBackground(Color.white);
         this.gerente=gerente;
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

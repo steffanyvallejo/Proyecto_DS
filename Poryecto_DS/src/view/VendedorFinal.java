@@ -31,6 +31,7 @@ public class VendedorFinal extends javax.swing.JFrame {
         this.vendedor = vendedor;
         listModel= new DefaultListModel<>();
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
