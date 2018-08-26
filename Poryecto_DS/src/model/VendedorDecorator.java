@@ -1,8 +1,5 @@
 package model;
 
-/**
- *
- */
 public abstract class VendedorDecorator extends Vendedor {
 
     private Vendedor vendedor;

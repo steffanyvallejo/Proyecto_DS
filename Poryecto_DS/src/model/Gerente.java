@@ -1,15 +1,10 @@
 package model;
 
-import controller.ConexionDBM;
 import controller.ConsultasDB;
 import controller.ReportesDB;
 import java.util.*;
 
-/**
- *
- */
 public class Gerente extends Empleado {
-
     
     private ConsultasDB consultas;
     private ReportesDB reportes;
@@ -58,5 +53,4 @@ public class Gerente extends Empleado {
         datos = reportes.reporteArticulo();
         return datos;
     }
-
 }

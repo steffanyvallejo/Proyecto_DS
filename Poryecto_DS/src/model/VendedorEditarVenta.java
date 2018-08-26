@@ -3,9 +3,6 @@ package model;
 import controller.ActualizacionesDB;
 import java.util.LinkedList;
 
-/**
- *
- */
 public class VendedorEditarVenta extends VendedorDecorator {
 
     

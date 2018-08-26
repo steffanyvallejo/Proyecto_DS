@@ -2,7 +2,6 @@ package model;
 
 import controller.ConsultasDB;
 import controller.IngresosDB;
-import java.sql.Date;
 import java.util.LinkedList;
 
 public class Vendedor extends Empleado implements IAtenderCliente {

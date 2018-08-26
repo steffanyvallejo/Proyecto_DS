@@ -1,28 +1,22 @@
 package model;
 
-import java.util.*;
+public class Lavadora extends Articulo {
 
-/**
- * 
- */
-public class Lavadora extends Articulo{
-
-	private float capacidadCarga;
-        private String tipo;
+    private float capacidadCarga;
+    private String tipo;
 
     public Lavadora(String modelo, String marca, String categoria, String color, float precio, int stock) {
         super(modelo, marca, categoria, color, precio, stock);
     }
-	
 
     @Override
     public void setDescripcion() {
-       this.descripcion= "Capacidad: "+capacidadCarga+", tipo: "+tipo;
+        this.descripcion = "Capacidad: " + capacidadCarga + ", tipo: " + tipo;
     }
 
     @Override
     public String getDescripcion() {
-       return this.descripcion;
+        return this.descripcion;
     }
 
     @Override
@@ -42,5 +36,4 @@ public class Lavadora extends Articulo{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
 }

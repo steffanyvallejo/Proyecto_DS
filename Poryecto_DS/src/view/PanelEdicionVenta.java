@@ -7,8 +7,6 @@ package view;
 
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import model.Empleado;
 import model.VendedorEditarVenta;
 
 /**
@@ -17,10 +15,6 @@ import model.VendedorEditarVenta;
  */
 public class PanelEdicionVenta extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PanelConsultaArticulo
-     */
-    
     private VendedorEditarVenta vendedorEditor;
     
     public PanelEdicionVenta(VendedorEditarVenta vendedorEditor) {

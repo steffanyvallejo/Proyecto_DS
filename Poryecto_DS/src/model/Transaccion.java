@@ -2,26 +2,42 @@ package model;
 
 import java.util.*;
 
-/**
- * 
- */
 public class Transaccion implements IAtenderCliente{
 
     private IAtenderCliente next;
-    public int idTransacción=0;
+    private int idTransacción=0;
     private Date fecha;
-    public String idCliente;
-    public String idVendedor;
+    private String idCliente;
+    private String idVendedor;
 
-    public Transaccion() {
-    }       
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(String idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public String getIdVendedor() {
+        return idVendedor;
+    }
+
+    public void setIdVendedor(String idVendedor) {
+        this.idVendedor = idVendedor;
+    }
     
-    public Transaccion(Cliente c, Vendedor v) {
-        this.fecha = new Date();
-        this.idTransacción+=1;
-        this.fecha=fecha;
-    }    
-
+    public Transaccion() {
+        this.idTransacción+=1; 
+    }       
+        
     public void registrarTransacción(int idTransaccion) {
         System.out.println("Transacion"+this.idTransacción+" exitosa");
     }

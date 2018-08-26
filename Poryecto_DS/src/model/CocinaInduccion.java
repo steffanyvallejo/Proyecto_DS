@@ -1,10 +1,5 @@
 package model;
 
-import java.util.*;
-
-/**
- * 
- */
 public class CocinaInduccion extends Articulo {
     private int numHornillas;
     private boolean tieneHorno;
@@ -13,8 +8,6 @@ public class CocinaInduccion extends Articulo {
         super(modelo, marca, categoria, color, precio, stock);
     }
 
-    
-    
     @Override
     public void setDescripcion() {
         this.descripcion= "Numero de hornillas: "+numHornillas+", tiene horno: "+tieneHorno;
@@ -41,6 +34,4 @@ public class CocinaInduccion extends Articulo {
     public void setTieneHorno(boolean tieneHorno) {
         this.tieneHorno = tieneHorno;
     }
-
-
 }

@@ -15,10 +15,7 @@ public class Cotizacion {
     public Cotizacion(Date fecha, float total) {
         this.fecha = fecha;
         this.total = total;
-        SimpleDateFormat formateador1 = new SimpleDateFormat("yyyyMMddhhmmss");                        
-        java.util.Date ahora = new java.util.Date();        
-        String codigoS = formateador1.format(ahora);
-        this.codigo=codigoS;
+        setCodigo();
     }
 
     public String getCodigo() {
@@ -43,6 +40,12 @@ public class Cotizacion {
     
     public void mostrarProductosCotizados(){
         //Implementacion del metodo
-    }
+    }    
     
+    public void setCodigo(){
+        SimpleDateFormat formateador1 = new SimpleDateFormat("yyyyMMddhhmmss");                        
+        java.util.Date ahora = new java.util.Date();        
+        String codigoS = formateador1.format(ahora);
+        this.codigo=codigoS;
+    }
 }

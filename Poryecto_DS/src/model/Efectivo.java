@@ -1,10 +1,5 @@
 package model;
 
-import java.util.*;
-
-/**
- *
- */
 public class Efectivo extends FormaPago implements PagoStrategy {
 
     public Efectivo() {

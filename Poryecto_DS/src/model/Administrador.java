@@ -4,21 +4,19 @@ import controller.ConsultasDB;
 import controller.IngresosDB;
 import java.util.LinkedList;
 
-/**
- *
- */
 public class Administrador extends Empleado implements PeticionPermiso{
     IngresosDB ingreso;
     ConsultasDB consultas;
     
     public Administrador() {
         ingreso = new IngresosDB();
-        consultas =new ConsultasDB();
-        
+        consultas =new ConsultasDB();        
     }
+    
     public void agregarArticulo(Articulo a){
         ingreso.agregarArticuloDB(a);
     }
+    
     public void manejarTransacciones() {
         // TODO implement here
     }
@@ -99,7 +97,7 @@ public class Administrador extends Empleado implements PeticionPermiso{
 
     @Override
     public LinkedList<String> consultarCliente(String cedula) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //Implementacion del metodo
+        return null;
     }
-
 }

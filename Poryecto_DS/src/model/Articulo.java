@@ -1,8 +1,5 @@
 package model;
 
-/**
- *
- */
 public abstract class Articulo {
 
     protected String modelo;
@@ -49,5 +46,4 @@ public abstract class Articulo {
     public String getColor() {
         return color;
     }
-
 }

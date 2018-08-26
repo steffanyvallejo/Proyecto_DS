@@ -1,13 +1,7 @@
 package model;
 
-import java.util.*;
-
-/**
- * 
- */
 public class Refrigeradora extends Articulo {
 
- 
     private int altura;
     private int numPuertas;
 
@@ -15,10 +9,9 @@ public class Refrigeradora extends Articulo {
         super(modelo, marca, categoria, color, precio, stock);
     }
 
-    
     @Override
     public void setDescripcion() {
-        this.descripcion= "altura:"+altura+  ", numero de puertas: " +numPuertas +  ", color:" +color;
+        this.descripcion = "altura:" + altura + ", numero de puertas: " + numPuertas + ", color:" + color;
     }
 
     @Override
@@ -34,7 +27,7 @@ public class Refrigeradora extends Articulo {
     @Override
     public float getPrecio() {
         return this.precio;
-}
+    }
 
     public void setAltura(int altura) {
         this.altura = altura;
@@ -43,5 +36,4 @@ public class Refrigeradora extends Articulo {
     public void setNumPuertas(int numPuertas) {
         this.numPuertas = numPuertas;
     }
-    
 }

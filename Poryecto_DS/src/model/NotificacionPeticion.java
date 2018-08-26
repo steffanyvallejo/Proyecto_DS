@@ -2,9 +2,6 @@ package model;
 
 import java.util.*;
 
-/**
- *
- */
 public class NotificacionPeticion implements Subject {
 
     private ArrayList<PeticionPermiso> observadores = new ArrayList<PeticionPermiso>();

@@ -1,10 +1,5 @@
 package model;
 
-import java.util.*;
-
-/**
- *
- */
 public class Credito extends FormaPago implements PagoStrategy{
 
     private String modo;
