@@ -48,6 +48,12 @@ public class VendedorTest extends TestCase{
         LinkedList<LinkedList<String>> result = instance.consultarArticulo(modo, campo);
         assertNull(result);
     }
-
+    
+    public void testConsultarClienteEmpty(){
+        String cedula = "dgd";
+        Vendedor instance = new Vendedor();
+        LinkedList<String> result = instance.consultarCliente(cedula);
+        assertTrue(result.isEmpty());
+    }
     
 }
