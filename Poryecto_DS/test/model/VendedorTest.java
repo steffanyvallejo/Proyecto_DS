@@ -19,24 +19,24 @@ public class VendedorTest extends TestCase{
     public VendedorTest() {
     }
     
+    
     /**
      * Test of consultarCliente method, of class Vendedor.
      */
-    @Test
-    public void testConsultarClienteEquals() {
-        String cedula = "1234567890";
-        Vendedor instance = new Vendedor();
-        LinkedList<String> datos=new LinkedList<>();
-        //Cliente que tengan en su base de datos
-        datos.add("ginger");
-        datos.add("jaco");
-        datos.add("1234543234");
-        datos.add("san carlos");
-        datos.add("ging@espol.edu.ec");
-        LinkedList<String> result = instance.consultarCliente(cedula);
-        assertEquals(datos, result);
-    }
-   
+//    @Test
+//    public void testConsultarClienteEquals() {
+//        String cedula = "1234567890";
+//        Vendedor instance = new Vendedor();
+//        LinkedList<String> datos=new LinkedList<>();
+//        //Cliente que tengan en su base de datos
+//        datos.add("ginger");
+//        datos.add("jaco");
+//        datos.add("1234543234");
+//        datos.add("san carlos");
+//        datos.add("ging@espol.edu.ec");
+//        LinkedList<String> result = instance.consultarCliente(cedula);
+//        assertEquals(datos, result);
+//    }
     /**
      * Test of consultarArticulo method, of class Vendedor.
      */
@@ -49,11 +49,12 @@ public class VendedorTest extends TestCase{
         assertNull(result);
     }
     
-    public void testConsultarClienteEmpty(){
-        String cedula = "dgd";
-        Vendedor instance = new Vendedor();
-        LinkedList<String> result = instance.consultarCliente(cedula);
-        assertTrue(result.isEmpty());
-    }
+//    @Test
+//    public void testConsultarClienteEmpty(){
+//        String cedula = "dgd";
+//        Vendedor instance = new Vendedor();
+//        LinkedList<String> result = instance.consultarCliente(cedula);
+//        assertTrue(result.isEmpty());
+//    }
     
 }
