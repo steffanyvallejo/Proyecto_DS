@@ -18,11 +18,10 @@ public class PanelConsultaArticulo extends javax.swing.JPanel {
     /**
      * Creates new form PanelConsultaArticulo
      */
-    
     private Empleado emp;
-    
+
     public PanelConsultaArticulo(Empleado emp) {
-        this.emp=emp;
+        this.emp = emp;
         initComponents();
     }
 
@@ -94,26 +93,21 @@ public class PanelConsultaArticulo extends javax.swing.JPanel {
         System.out.println(jTextField1.getText());
         LinkedList<LinkedList<String>> datos = emp.consultarArticulo((String) jComboBox1.getSelectedItem(), jTextField1.getText());
         if (datos.size() != 0) {
-
-            DefaultTableModel model = new DefaultTableModel(null, new String[]{"Nombre", "Categoría", "Precio", "Marca"});
-
+            DefaultTableModel model1 = new DefaultTableModel(null, new String[]{"Nombre", "Categoria", "Precio", "Marca"});
             for (int i = 0; i < datos.size(); i++) {
-                model.addRow(new Object[]{datos.get(i).get(0), datos.get(i).get(1), datos.get(i).get(2), datos.get(i).get(3)});
+                model1.addRow(new Object[]{datos.get(i).get(0), datos.get(i).get(1), datos.get(i).get(2), datos.get(i).get(3)});
             }
-
-            jTable1.setModel(model);
-
+            jTable1.setModel(model1);
         } else {
             jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                    {"NO HAY", "NO HAY", "NO HAY", "NO HAY"},},
-                new String[]{
-                    "Nombre", "Categoría", "Precio", "Marca"
-                }
+                    new Object[][]{
+                        {"NO HAY", "NO HAY", "NO HAY", "NO HAY"},},
+                    new String[]{
+                        "Nombre", "Categoria", "Precio", "Marca"
+                    }
             ));
         }
     }//GEN-LAST:event_jButton4ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton4;

@@ -1,5 +1,6 @@
 package model;
 
+import controller.ConsultasDB;
 import controller.IngresosDB;
 import java.util.LinkedList;
 
@@ -7,8 +8,13 @@ import java.util.LinkedList;
  *
  */
 public class Administrador extends Empleado implements PeticionPermiso{
-    IngresosDB ingreso= new IngresosDB();
+    IngresosDB ingreso;
+    ConsultasDB consultas;
+    
     public Administrador() {
+        ingreso = new IngresosDB();
+        consultas =new ConsultasDB();
+        
     }
     public void agregarArticulo(Articulo a){
         ingreso.agregarArticuloDB(a);
@@ -84,7 +90,11 @@ public class Administrador extends Empleado implements PeticionPermiso{
 
     @Override
     public LinkedList<LinkedList<String>> consultarArticulo(String modo, String campo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("consulta articulo ...");        
+        System.out.println(modo);
+        System.out.println(campo);
+        LinkedList<LinkedList<String>> datos = consultas.consultarArticulo(modo, campo);
+        return datos;
     }
 
     @Override
