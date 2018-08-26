@@ -25,9 +25,9 @@ public class Vendedor extends Empleado implements IAtenderCliente {
         this.ingresos=new IngresosDB();
     }
 
-    public void agregarCliente(String nombre,String apellido,String cedula, Date fech_nac,String telefono,String direccion, String correo) {
+    public void agregarCliente(Cliente cliente) {
         System.out.println("agregando cliente ...");        
-        ingresos.agregarClienteDB(nombre, apellido, cedula, fech_nac, telefono, direccion, correo);
+        ingresos.agregarClienteDB(cliente);
     }
     
     @Override

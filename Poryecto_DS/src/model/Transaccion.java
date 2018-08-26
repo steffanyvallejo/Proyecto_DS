@@ -20,8 +20,6 @@ public class Transaccion implements IAtenderCliente{
         this.fecha = new Date();
         this.idTransacción+=1;
         this.fecha=fecha;
-        this.idCliente=c.getId();
-        this.idVendedor=v.getId();
     }    
 
     public void registrarTransacción(int idTransaccion) {

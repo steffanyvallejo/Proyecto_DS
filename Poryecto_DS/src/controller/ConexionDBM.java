@@ -15,6 +15,7 @@ import java.util.logging.Logger;
  *
  * @author EmilioMP
  */
+
 public class ConexionDBM {
 
     private final String URL = "jdbc:mysql://localhost:3306/lineaBlanca";

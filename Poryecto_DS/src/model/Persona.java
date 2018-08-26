@@ -3,24 +3,31 @@ package model;
 import java.util.*;
 
 /**
- * 
+ *
  */
 public abstract class Persona {
 
-	/**
-	 * Default constructor
-	 */
-	public Persona() {
-	}
-        protected String id;
-	protected String nombre;
-	protected String apellido;
-	protected Date fechaNacimiento;
-	protected String numeroTelefonico;
-	protected String direcciónDomicilio;
-	protected String correoElectronico;
-        protected String cedula;
+    protected String nombre;
+    protected String apellido;
+    protected Date fechaNacimiento;
+    protected String numeroTelefonico;
+    protected String direcciónDomicilio;
+    protected String correoElectronico;
+    protected String cedula;
 
+    public Persona() {
+    }
+
+    public Persona(String nombre, String apellido, Date fechaNacimiento, String numeroTelefonico, String direcciónDomicilio, String correoElectronico, String cedula) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.numeroTelefonico = numeroTelefonico;
+        this.direcciónDomicilio = direcciónDomicilio;
+        this.correoElectronico = correoElectronico;
+        this.cedula = cedula;
+    }
+    
     public String getCedula() {
         return cedula;
     }
@@ -76,19 +83,4 @@ public abstract class Persona {
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-
-
-
-
-
-
-
 }

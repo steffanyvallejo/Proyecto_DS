@@ -1,23 +1,16 @@
 package model;
 
+import java.util.Date;
+
 /**
- * 
+ *
  */
 public class Cliente extends Persona {
 
-	public Cliente() {
-	}
+    public Cliente() {       
+    }        
 
-	public void pagar(float num) {
-		// TODO implement here
-	}
-
-	/**
-	 * @param Articulo 
-	 * @return
-	 */
-	public void comprar(Articulo a) {
-		// TODO implement here
-	}
-
+    public Cliente(String nombre, String apellido, Date fechaNacimiento, String numeroTelefonico, String direcciónDomicilio, String correoElectronico, String cedula) {
+        super(nombre, apellido, fechaNacimiento, numeroTelefonico, direcciónDomicilio, correoElectronico, cedula);
+    }        
 }

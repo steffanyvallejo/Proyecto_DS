@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.sql.PreparedStatement;
@@ -10,99 +5,33 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.sql.Connection;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author EmilioMP
  */
 public class ConsultasDB {
-    
-    private Connection conexion;    
-    
-    public ConsultasDB(){
-        this.conexion=new ConexionDBM().establecerConexion(conexion);
+
+    private Connection conexion;
+    private PreparedStatement pst;
+    private LinkedList<LinkedList<String>> datosArt;
+
+    public ConsultasDB() {
+        this.conexion = new ConexionDBM().establecerConexion(conexion);
+           
     }
-    
-    public LinkedList<LinkedList<String>> consultarArticulo(String modo, String campo) {
-        LinkedList<LinkedList<String>> datos = new LinkedList<LinkedList<String>>();        
+
+    public LinkedList<LinkedList<String>> consultarArticulo(String modo, String campo) {         
         System.out.println("conecta db para articulo");
         if (modo.equals("nombre")) {
-            System.out.println("antes del try para articulo");
-            try {
-                System.out.println("entra al nombre");
-                PreparedStatement pst = conexion.prepareStatement("SELECT * FROM t_articulo WHERE Art_Modelo = ?");
-                pst.setString(1, campo);
-                ResultSet rs = pst.executeQuery();
-                System.out.println("ejecucion del query");
-                while (rs.next()) {
-                    LinkedList<String> temp = new LinkedList<String>();
-                    String modelo = rs.getString("Art_Modelo");
-                    String categoria = rs.getString("Art_Categ");
-                    String precio = Float.toString(rs.getFloat("Art_Precio"));
-                    String marca = rs.getString("Art_Marca");
-                    temp.add(modelo);
-                    temp.add(categoria);
-                    temp.add(precio);
-                    temp.add(marca);
-                    datos.add(temp);
-                }
-                return datos;
-            } catch (SQLException ex) {
-                System.out.println("Error al no encontrar el producto en la db");
-                System.out.println(ex);
-            }
+            return consultaNombre(campo);
         } else if (modo.equals("descripción")) {
-            System.out.println("antes del try para articulo");
-            try {
-                System.out.println("entra a la descripcion");
-                PreparedStatement pst = conexion.prepareStatement("SELECT * FROM t_articulo WHERE Art_Descripcion LIKE ?");
-                pst.setString(1, "%" + campo + "%");
-                ResultSet rs = pst.executeQuery();
-                System.out.println("ejecucion del query");
-                while (rs.next()) {
-                    LinkedList<String> temp = new LinkedList<String>();
-                    String modelo = rs.getString("Art_Modelo");
-                    String categoria = rs.getString("Art_Categ");
-                    String precio = Float.toString(rs.getFloat("Art_Precio"));
-                    String marca = rs.getString("Art_Marca");
-                    temp.add(modelo);
-                    temp.add(categoria);
-                    temp.add(precio);
-                    temp.add(marca);
-                    datos.add(temp);
-                }
-                return datos;
-            } catch (SQLException ex) {
-                System.out.println("Error al no encontrar el producto en la db");
-                System.out.println(ex);
-            }
+            return consultaDescripcion(campo);
         } else if (modo.equals("categoría")) {
-            System.out.println("antes del try para articulo");
-            try {
-                System.out.println("entra a la categoria");
-                PreparedStatement pst = conexion.prepareStatement("SELECT * FROM t_articulo WHERE Art_Categ = ?");
-                pst.setString(1, campo);
-                ResultSet rs = pst.executeQuery();
-                System.out.println("ejecucion del query");
-                while (rs.next()) {
-                    LinkedList<String> temp = new LinkedList<String>();
-                    String modelo = rs.getString("Art_Modelo");
-                    String categoria = rs.getString("Art_Categ");
-                    String precio = Float.toString(rs.getFloat("Art_Precio"));
-                    String marca = rs.getString("Art_Marca");
-                    temp.add(modelo);
-                    temp.add(categoria);
-                    temp.add(precio);
-                    temp.add(marca);
-                    datos.add(temp);
-                }
-                return datos;
-            } catch (SQLException ex) {
-                System.out.println("Error al no encontrar el producto en la db");
-                System.out.println(ex);
-            }
-        }
+            return consultaCategoria(campo);
+        }            
         return null;
     }
     
@@ -111,7 +40,7 @@ public class ConsultasDB {
         System.out.println("conecta db para buscar c");
         try {
             System.out.println("entra al nombre");
-            PreparedStatement pst = conexion.prepareStatement("SELECT * FROM t_cliente WHERE Cli_Cedula = ?");
+            pst = conexion.prepareStatement("SELECT * FROM t_cliente WHERE Cli_Cedula = ?");
             pst.setString(1, cedula);
             ResultSet rs = pst.executeQuery();
             System.out.println("ejecucion del query");
@@ -133,5 +62,74 @@ public class ConsultasDB {
             System.out.println(ex);
         }
         return null;
+    }
+
+    private LinkedList<LinkedList<String>> consultaNombre(String campo) {
+        datosArt = new LinkedList<LinkedList<String>>();
+        System.out.println("antes del try para articulo");
+        try {
+            System.out.println("entra al nombre");
+            pst = conexion.prepareStatement("SELECT * FROM t_articulo WHERE Art_Modelo = ?");
+            pst.setString(1, campo);
+            ResultSet rs = pst.executeQuery();
+            guardarDatosArt(rs, datosArt);
+            return datosArt;
+        } catch (SQLException ex) {
+            System.out.println("Error al no encontrar el producto en la db");
+            System.out.println(ex);
+        }
+        return null;
+    }
+
+    private LinkedList<LinkedList<String>> consultaDescripcion(String campo) {
+        datosArt = new LinkedList<LinkedList<String>>();
+        System.out.println("antes del try para articulo");
+        try {
+            System.out.println("entra a la descripcion");
+            pst = conexion.prepareStatement("SELECT * FROM t_articulo WHERE Art_Descripcion LIKE ?");
+            pst.setString(1, "%" + campo + "%");
+            ResultSet rs = pst.executeQuery();
+            guardarDatosArt(rs, datosArt);
+            return datosArt;
+        } catch (SQLException ex) {
+            System.out.println("Error al no encontrar el producto en la db");
+            System.out.println(ex);
+        }
+        return null;
+    }
+
+    private LinkedList<LinkedList<String>> consultaCategoria(String campo) {
+        datosArt = new LinkedList<LinkedList<String>>();
+        System.out.println("antes del try para articulo");
+        try {
+            System.out.println("entra a la categoria");
+            pst = conexion.prepareStatement("SELECT * FROM t_articulo WHERE Art_Categ = ?");
+            pst.setString(1, campo);
+            ResultSet rs = pst.executeQuery();
+            guardarDatosArt(rs, datosArt);
+            return datosArt;
+        } catch (SQLException ex) {
+            System.out.println("Error al no encontrar el producto en la db");
+            System.out.println(ex);
+        }return null;
+    }
+    
+    private void guardarDatosArt(ResultSet rs, LinkedList<LinkedList<String>> datosArt){
+        try {
+            while (rs.next()) {                
+                LinkedList<String> tempArt = new LinkedList<>();
+                String modelo = rs.getString("Art_Modelo");
+                String categoria = rs.getString("Art_Categ");
+                String precio = Float.toString(rs.getFloat("Art_Precio"));
+                String marca = rs.getString("Art_Marca");
+                tempArt.add(modelo);
+                tempArt.add(categoria);
+                tempArt.add(precio);
+                tempArt.add(marca);                
+                datosArt.add(tempArt);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultasDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

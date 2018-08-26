@@ -16,6 +16,7 @@ import model.Administrador;
 
 
 import model.Articulo;
+import model.Cliente;
 import model.Credito;
 import model.Efectivo;
 import model.NotificacionPeticion;
@@ -636,7 +637,8 @@ public class VendedorFinal extends javax.swing.JFrame {
         String direccion = jTextField7.getText();
         String correo = jTextField5.getText();
         String cedula = jTextField8.getText();
-        vendedor.agregarCliente(nombre, apellido, cedula, fech_nac, telefono, direccion, correo);
+        Cliente cliente = new Cliente(nombre, apellido, fech_nac, telefono, direccion, correo, cedula);        
+        vendedor.agregarCliente(cliente);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed

@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 import model.Articulo;
+import model.Cliente;
 import model.Credito;
 import model.Efectivo;
 import model.FormaPago;
@@ -26,22 +27,22 @@ import model.Venta;
  */
 public class IngresosDB {
 
-    private Connection conexion;
+    private Connection conexion;    
 
     public IngresosDB() {
         this.conexion = new ConexionDBM().establecerConexion(conexion);
     }
 
-    public void agregarClienteDB(String nombre, String apellido, String cedula, Date fech_nac, String telefono, String direccion, String correo) {
+    public void agregarClienteDB(Cliente cliente) {
         try {
             PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_cliente (Cli_Cedula, Cli_Nombre, Cli_Apellido, Cli_Direccion, Cli_Telefono, Cli_email, Cli_fecha_nacimiento) VALUES (?,?,?,?,?,?,?)");
-            pst.setString(1, cedula);
-            pst.setString(2, nombre);
-            pst.setString(3, apellido);
-            pst.setString(4, direccion);
-            pst.setString(5, telefono);
-            pst.setString(6, correo);
-            pst.setDate(7, fech_nac);
+            pst.setString(1, cliente.getCedula());
+            pst.setString(2, cliente.getNombre());
+            pst.setString(3, cliente.getApellido());
+            pst.setString(4, cliente.getDirecciónDomicilio());
+            pst.setString(5, cliente.getNumeroTelefonico());
+            pst.setString(6, cliente.getCorreoElectronico());
+            pst.setDate(7, Date.valueOf(new SimpleDateFormat("yyyy-MM-dd").format(cliente.getFechaNacimiento())));
             int res = pst.executeUpdate();
             if (res > 0) {
                 JOptionPane.showMessageDialog(null, "Cliente ingresado éxitosamente en el sistema");
@@ -57,7 +58,7 @@ public class IngresosDB {
         }
     }
 
-    public int getIDVendedor(Vendedor vendedor) {
+    private int getIDVendedor(Vendedor vendedor) {
         int id = 0;
         try {
             System.out.println("entra al nombre");
@@ -76,7 +77,7 @@ public class IngresosDB {
         return id;
     }
 
-    public int getIDCliente(String cedula) {
+    private int getIDCliente(String cedula) {
         int id = 0;
         try {
             System.out.println("entra al nombre");
@@ -93,7 +94,7 @@ public class IngresosDB {
             System.out.println(ex);
         }
         return id;
-    }   
+    }
 
     public void ingresarVentaDB(Venta venta, Vendedor vendedor, String cedulaCliente) {
         try {
@@ -116,7 +117,7 @@ public class IngresosDB {
         }
     }
 
-    public int getIDVenta(Venta venta) {
+    private int getIDVenta(Venta venta) {
         int id = 0;
         try {
             System.out.println("entra al nombre");
@@ -137,55 +138,61 @@ public class IngresosDB {
 
     public void ingresarPago(Venta venta, FormaPago fpago) {
         if (fpago instanceof Credito) {
-            try {
-                PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_pagocredito (PC_Fecha, PC_Subtotal, PC_Impuestos, PC_PagoCorriente, PC_PagoDiferido, PC_MesesDiferidos, Venta_ID) VALUES (?,?,?,?,?,?,?)");              
-                pst.setDate(1, Date.valueOf(new SimpleDateFormat("yyyy-MM-dd").format(venta.getFecha())));
-                pst.setDouble(2, venta.getSubtotal());
-                pst.setDouble(3, venta.getSubtotal()*0.12);
-                if(((Credito) fpago).getModo().equals("Pago corriente")){
-                    pst.setBoolean(4, true);
-                    pst.setBoolean(5, false);
-                    pst.setInt(6, 0);
-                    pst.setInt(7, getIDVenta(venta));
-                }                
-                else if(((Credito) fpago).getModo().equals("Pago diferido")){
-                    pst.setBoolean(4, false);
-                    pst.setBoolean(5, true);
-                    pst.setInt(6, ((Credito) fpago).getMesesDiferido());
-                    pst.setInt(7, getIDVenta(venta));
-                }
-                int res = pst.executeUpdate();
-                if (res > 0) {
-                    System.out.println("pagoc bien");
-                } else {
-                    System.out.println("pagoc mal");
-                }
-            } catch (SQLException ex) {
-                System.out.println("pagoc mal");
-                System.out.println(ex.getMessage());
-            }
+            ingresoPagoCredito(venta, fpago);
         } else if (fpago instanceof Efectivo) {
-            try {
-                PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_pagoefectivo (PE_Fecha, PE_Subtotal, PE_Impuestos, Venta_ID) VALUES (?,?,?,?)");
-                pst.setDate(1, Date.valueOf(new SimpleDateFormat("yyyy-MM-dd").format(venta.getFecha())));
-                pst.setDouble(2, venta.getSubtotal());
-                pst.setDouble(3, venta.getSubtotal()*0.12);
-                pst.setInt(4, getIDVenta(venta));                
-                int res = pst.executeUpdate();
-                if (res > 0) {
-                    System.out.println("pagoe bien");
-                } else {
-                    System.out.println("pagoe mal");
-                }
-            } catch (SQLException ex) {
-                System.out.println("pagoe mal");
-                System.out.println(ex.getMessage());
-            }
+            ingresoPagoEfectivo(venta);
         }
     }
-    
-    
-    public int getIDArt(String modelo){
+
+    private void ingresoPagoEfectivo(Venta venta) {
+        try {
+            PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_pagoefectivo (PE_Fecha, PE_Subtotal, PE_Impuestos, Venta_ID) VALUES (?,?,?,?)");
+            pst.setDate(1, Date.valueOf(new SimpleDateFormat("yyyy-MM-dd").format(venta.getFecha())));
+            pst.setDouble(2, venta.getSubtotal());
+            pst.setDouble(3, venta.getSubtotal() * 0.12);
+            pst.setInt(4, getIDVenta(venta));
+            int res = pst.executeUpdate();
+            if (res > 0) {
+                System.out.println("pagoe bien");
+            } else {
+                System.out.println("pagoe mal");
+            }
+        } catch (SQLException ex) {
+            System.out.println("pagoe mal");
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    private void ingresoPagoCredito(Venta venta, FormaPago fpago) {
+        try {
+            PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_pagocredito (PC_Fecha, PC_Subtotal, PC_Impuestos, PC_PagoCorriente, PC_PagoDiferido, PC_MesesDiferidos, Venta_ID) VALUES (?,?,?,?,?,?,?)");
+            pst.setDate(1, Date.valueOf(new SimpleDateFormat("yyyy-MM-dd").format(venta.getFecha())));
+            pst.setDouble(2, venta.getSubtotal());
+            pst.setDouble(3, venta.getSubtotal() * 0.12);
+            if (((Credito) fpago).getModo().equals("Pago corriente")) {
+                pst.setBoolean(4, true);
+                pst.setBoolean(5, false);
+                pst.setInt(6, 0);
+                pst.setInt(7, getIDVenta(venta));
+            } else if (((Credito) fpago).getModo().equals("Pago diferido")) {
+                pst.setBoolean(4, false);
+                pst.setBoolean(5, true);
+                pst.setInt(6, ((Credito) fpago).getMesesDiferido());
+                pst.setInt(7, getIDVenta(venta));
+            }
+            int res = pst.executeUpdate();
+            if (res > 0) {
+                System.out.println("pagoc bien");
+            } else {
+                System.out.println("pagoc mal");
+            }
+        } catch (SQLException ex) {
+            System.out.println("pagoc mal");
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    private int getIDArt(String modelo) {
         int id = 0;
         try {
             System.out.println("entra al nombre");
@@ -203,14 +210,14 @@ public class IngresosDB {
         }
         return id;
     }
-    
-    public void ingresarDetallesVenta(Venta venta, LinkedList<String> productosC){
+
+    public void ingresarDetallesVenta(Venta venta, LinkedList<String> productosC) {
         int idV = getIDVenta(venta);
-        for(String p: productosC){
+        for (String p : productosC) {
             try {
                 PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_detalle_venta(Venta_ID, Articulo_ID) VALUES (?,?)");
                 pst.setInt(1, idV);
-                pst.setInt(2, getIDArt(p));                
+                pst.setInt(2, getIDArt(p));
                 int res = pst.executeUpdate();
                 if (res > 0) {
                     System.out.println("detallev bien");
@@ -223,15 +230,16 @@ public class IngresosDB {
             }
         }
     }
+
     public void agregarArticuloDB(Articulo articulo) {
-        int idArt= getIDArt(articulo.getModelo());
+        int idArt = getIDArt(articulo.getModelo());
         try {
             PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_articulo (Art_Modelo, Art_Descripcion,Art_Precio, Art_Stock,Art_Categ, Art_Marca, Art_Color) VALUES (?,?,?,?,?,?,?)");
             pst.setString(1, articulo.getModelo());
             pst.setString(2, articulo.getDescripcion());
             pst.setFloat(3, articulo.getPrecio());
             pst.setInt(4, articulo.getStock());
-            pst.setString(5, articulo.getCategoria() );
+            pst.setString(5, articulo.getCategoria());
             pst.setString(6, articulo.getMarca());
             pst.setString(7, articulo.getColor());
             int res = pst.executeUpdate();
@@ -248,5 +256,4 @@ public class IngresosDB {
             System.out.println(ex.getMessage());
         }
     }
-    
 }
