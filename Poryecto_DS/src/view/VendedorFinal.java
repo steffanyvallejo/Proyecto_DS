@@ -12,14 +12,14 @@ import java.sql.Date;
 import java.util.LinkedList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import jdk.nashorn.internal.runtime.ListAdapter;
+import model.Administrador;
+
 
 import model.Articulo;
 import model.Credito;
 import model.Efectivo;
-import model.FormaPago;
-import model.PagoStrategy;
+import model.NotificacionPeticion;
+import model.Transaccion;
 import model.Vendedor;
 import model.VendedorEditarVenta;
 import model.Venta;
@@ -40,6 +40,7 @@ public class VendedorFinal extends javax.swing.JFrame {
     private PanelConsultaArticulo panelCA;
     private PanelConsultaCliente panelCC;
     private PanelEdicionVenta panelEV;
+    private NotificacionPeticion notPet;
     
     public VendedorFinal(Vendedor vendedor) {        
         getContentPane().setBackground(Color.white);
@@ -47,6 +48,8 @@ public class VendedorFinal extends javax.swing.JFrame {
         this.panelCA=new PanelConsultaArticulo(vendedor);
         this.panelCC=new PanelConsultaCliente(vendedor);        
         this.cargas=new CargasDB();
+        notPet = new NotificacionPeticion();
+        notPet.attach(new Administrador());
         listModel= new DefaultListModel<>();
         articulos = cargas.cargarArticulos();
         initComponents();
@@ -691,6 +694,7 @@ public class VendedorFinal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         JOptionPane.showMessageDialog(null, "PERMISO CONCEDIDO POR UN ADMINISTRADOR");
+        vendedor.pedirPermiso();
         VendedorEditarVenta vendedorEdicion = new VendedorEditarVenta(vendedor);
         this.panelEV=new PanelEdicionVenta(vendedorEdicion);
         jTabbedPane3.addTab("EDITAR VENTA", panelEV);
@@ -703,6 +707,7 @@ public class VendedorFinal extends javax.swing.JFrame {
         }        
         String cedulaCliente = jTextField10.getText();                   
         Venta venta = new Venta(new java.util.Date(), Float.parseFloat(jLabel23.getText()), Float.parseFloat(jLabel25.getText()));
+        Transaccion transaccion = new Transaccion();        
         int indexModo = jTabbedPane4.getSelectedIndex();
         String modo = jTabbedPane4.getTitleAt(indexModo); 
         venta.generarPago(modo);
@@ -714,51 +719,17 @@ public class VendedorFinal extends javax.swing.JFrame {
                 mesesD = Integer.parseInt((String)jComboBox4.getSelectedItem());
             }            
             Credito credito = new Credito(modoCredito, mesesD);
-            vendedor.realizarVenta(venta, vendedor, cedulaCliente, productosComprados, credito);
+            transaccion.realizarVenta(venta, vendedor, cedulaCliente, productosComprados, credito);
+            //vendedor.realizarVenta(venta, vendedor, cedulaCliente, productosComprados, credito);
         }else if(modo.equals("EFECTIVO")){
             Efectivo efectivo = new Efectivo();
-            vendedor.realizarVenta(venta, vendedor,cedulaCliente, productosComprados, efectivo);
+            transaccion.realizarVenta(venta, vendedor, cedulaCliente, productosComprados, efectivo);
+            //vendedor.realizarVenta(venta, vendedor,cedulaCliente, productosComprados, efectivo);
         }else{
             System.out.println("mal");
         }
     }//GEN-LAST:event_jButton9ActionPerformed
     
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VendedorFinal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VendedorFinal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VendedorFinal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VendedorFinal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
- /*
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VendedorFinal().setVisible(true);
-            }
-        });
-         */
-    }
     private DefaultListModel<String> listModel;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> Lista;

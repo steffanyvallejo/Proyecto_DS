@@ -2,21 +2,11 @@ package model;
 
 import java.util.LinkedList;
 
-
-/**
- *
- */
 public abstract class Empleado extends Persona {
 
-    /**
-     * Default constructor
-     */
     public Empleado() {
     }
 
-    /**
-     *
-     */
     protected String usuario;
     protected String contraseña;
     protected String tipo;

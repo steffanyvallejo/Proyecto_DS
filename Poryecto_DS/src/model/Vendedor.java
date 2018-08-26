@@ -5,13 +5,20 @@ import controller.IngresosDB;
 import java.sql.Date;
 import java.util.LinkedList;
 
-/**
- *
- */
-public class Vendedor extends Empleado {
+public class Vendedor extends Empleado implements IAtenderCliente {
 
     private ConsultasDB consultas;
     private IngresosDB ingresos;
+    private IAtenderCliente next;
+    private boolean ocupado;
+
+    public boolean isOcupado() {
+        return ocupado;
+    }
+
+    public void setOcupado(boolean ocupado) {
+        this.ocupado = ocupado;
+    }
    
     public Vendedor() {
         this.consultas=new ConsultasDB();
@@ -23,11 +30,12 @@ public class Vendedor extends Empleado {
         ingresos.agregarClienteDB(nombre, apellido, cedula, fech_nac, telefono, direccion, correo);
     }
     
-    public float cotizar(Articulo a) {
-        System.out.println("cotizando producto ...");
-        return 0.0f;
+    @Override
+    public void realizarCotizacion(Articulo a) {
+        System.out.println("cotizando producto ...");        
     }
     
+    @Override
     public void realizarVenta(Venta venta, Vendedor vendedor, String cedulaCliente, LinkedList<String> productosComprados, FormaPago fpago){
         System.out.println("vendiendo producto ...");
         ingresos.ingresarVentaDB(venta, vendedor, cedulaCliente);
@@ -35,7 +43,6 @@ public class Vendedor extends Empleado {
         ingresos.ingresarDetallesVenta(venta, productosComprados);
         
     }
-
     
     @Override
     public LinkedList<String> consultarCliente(String cedula) {
@@ -53,9 +60,19 @@ public class Vendedor extends Empleado {
         return datos;
     }
     
-    public void pedirPermiso(NotificacionPeticion np){
+    public void pedirPermiso(){
         System.out.println("Necesito permiso");
-        //NotificacionPeticion np = new NotificacionPeticion();
-        np.notifyObservers();
+        NotificacionPeticion notPet = new NotificacionPeticion();
+        notPet.notifyObservers();
+    }
+
+    @Override
+    public void setNex(IAtenderCliente atender) {
+        next = atender;
+    }
+
+    @Override
+    public IAtenderCliente getNex() {
+        return next;
     }
 }

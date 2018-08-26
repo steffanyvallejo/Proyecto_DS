@@ -1,36 +1,48 @@
 package model;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- * 
- */
-public class Cotizacion extends Responsability {
+public class Cotizacion {
 
-	
-	public Cotizacion(Articulo a, int cantidad) {
-            //this.idArticulo=a.idArticulo;
-            this.cantArticulo=cantidad;
-            
-	}
+    private String codigo;
+    private Date fecha;
+    private float total;
 
-	/**
-	 * 
-	 */
-	private int idArticulo;
+    public Cotizacion() {
+    }
 
-	private int cantArticulo;
-        public float consultar(Articulo a) {
-                System.out.println("Cotizando..");
-		return a.precio;
-	}
+    public Cotizacion(Date fecha, float total) {
+        this.fecha = fecha;
+        this.total = total;
+        SimpleDateFormat formateador1 = new SimpleDateFormat("yyyyMMddhhmmss");                        
+        java.util.Date ahora = new java.util.Date();        
+        String codigoS = formateador1.format(ahora);
+        this.codigo=codigoS;
+    }
 
-	public double calcularValor() {
-		return 0.0d;
-	}
+    public String getCodigo() {
+        return codigo;
+    }
 
-	public void setNextResponsability() {
-		// TODO implement here
-	}
+    public Date getFecha() {
+        return fecha;
+    }
 
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public void calcularTotal(){
+        //Implementacion del metodo
+    }
+    
+    public void mostrarProductosCotizados(){
+        //Implementacion del metodo
+    }
+    
 }

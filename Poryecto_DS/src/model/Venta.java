@@ -34,8 +34,8 @@ public class Venta {
         this.total = total;        
         SimpleDateFormat formateador1 = new SimpleDateFormat("yyyyMMddhhmmss");                        
         java.util.Date ahora = new java.util.Date();        
-        String ahoraS = formateador1.format(ahora);
-        this.codigo=ahoraS;
+        String codigoS = formateador1.format(ahora);
+        this.codigo=codigoS;
     }        
     
     public double calcularValorTotal() {

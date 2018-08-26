@@ -11,10 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
-import model.CocinaInduccion;
-import model.Lavadora;
-import model.Refrigeradora;
-
 /**
  *
  * @author EmilioMP

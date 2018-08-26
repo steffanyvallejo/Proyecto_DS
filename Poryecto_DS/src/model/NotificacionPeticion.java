@@ -8,9 +8,7 @@ import java.util.*;
 public class NotificacionPeticion implements Subject {
 
     private ArrayList<PeticionPermiso> observadores = new ArrayList<PeticionPermiso>();
-    /**
-     * Default constructor
-     */
+
     public NotificacionPeticion() {
     }
 
@@ -30,5 +28,4 @@ public class NotificacionPeticion implements Subject {
             observadores.get(i).update();
         }
     }
-
 }
