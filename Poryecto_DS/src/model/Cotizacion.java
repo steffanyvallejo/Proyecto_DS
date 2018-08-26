@@ -34,12 +34,20 @@ public class Cotizacion {
         return total;
     }
 
-    public void calcularTotal(){
-        //Implementacion del metodo
+    public void calcularTotal(LinkedList<Articulo> listArticulos){
+        if (null!=listArticulos) {
+            for (Articulo a : listArticulos) {
+                total += a.getPrecio();
+            }
+        }
     }
     
-    public void mostrarProductosCotizados(){
-        //Implementacion del metodo
+    public void mostrarProductosCotizados(LinkedList<Articulo> listArticulos){
+        if (null != listArticulos) {
+            for (Articulo a : listArticulos) {
+                System.out.println(a.getCategoria() + a.getDescripcion());
+            }
+        }
     }    
     
     public void setCodigo(){
