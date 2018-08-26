@@ -47,6 +47,10 @@ public class Vendedor extends Empleado implements IAtenderCliente {
     public LinkedList<String> consultarCliente(String cedula) {
         System.out.println("consulta cliente ...");        
         LinkedList<String>datos = consultas.consultarClienteDB(cedula);
+        if(null==datos){
+            return new LinkedList<>();
+        }
+        System.out.println("++++"+datos);
         return datos;
     }
 

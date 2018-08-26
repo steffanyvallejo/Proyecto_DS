@@ -25,19 +25,9 @@ public class GerenteTest {
     public void testGenerarReporteVendedor() {
         Gerente instance = new Gerente();
         LinkedList<LinkedList<String>> expResult = null;
-        LinkedList<LinkedList<String>> result = instance.generarReporteVendedor();
-        assertNotSame(expResult, result);
+        LinkedList<LinkedList<String>> result = instance.generarReporteVendedor();               
+        assertSame(expResult, result);
         
-    }
-
-    /**
-     * Test of generarReporteArticulo method, of class Gerente.
-     */
-    @Test
-    public void testGenerarReporteArticulo() {
-        Gerente instance = new Gerente();
-        LinkedList<LinkedList<String>> result = instance.generarReporteArticulo();
-        assertNotNull(result);
     }
     
 }
