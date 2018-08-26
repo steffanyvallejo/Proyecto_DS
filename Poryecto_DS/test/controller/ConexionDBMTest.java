@@ -15,7 +15,6 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author eduar
  */
 public class ConexionDBMTest {
     
@@ -29,21 +28,8 @@ public class ConexionDBMTest {
         System.out.println("establecerConexion");
         Connection conexion = null;
         ConexionDBM instance = new ConexionDBM();
-        Connection expResult = null;
         Connection result = instance.establecerConexion(conexion);
-        System.out.println(result);
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Test of cerrarConexion method, of class ConexionDBM.
-     */
-    @Test
-    public void testCerrarConexion() {
-        System.out.println("cerrarConexion");
-        Connection conexion = null;
-        ConexionDBM instance = new ConexionDBM();
-        instance.cerrarConexion(conexion);
+        assertNotNull(result);
     }
     
 }

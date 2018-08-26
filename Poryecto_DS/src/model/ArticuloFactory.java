@@ -2,7 +2,6 @@ package model;
 
 /**
  *
- * @author Steffany
  */
 public class ArticuloFactory implements ArticuloFactoryMethod{
 

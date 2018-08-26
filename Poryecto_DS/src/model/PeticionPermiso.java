@@ -2,7 +2,6 @@ package model;
 
 /**
  *
- * @author EmilioMP
  */
 
 public interface PeticionPermiso {

@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author EmilioMP
  */
 public class ConsultasDB {
 

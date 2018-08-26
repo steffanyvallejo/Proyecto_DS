@@ -12,7 +12,6 @@ import model.Vendedor;
 
 /**
  *
- * @author EmilioMP
  */
 public class LoginView extends javax.swing.JFrame {
     

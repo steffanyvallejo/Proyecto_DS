@@ -7,7 +7,6 @@ import model.Gerente;
 
 /**
  *
- * @author EmilioMP
  */
 public class GerenteView extends javax.swing.JFrame {
     

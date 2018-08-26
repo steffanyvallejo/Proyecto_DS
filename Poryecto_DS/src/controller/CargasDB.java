@@ -23,7 +23,6 @@ import model.Vendedor;
 
 /**
  *
- * @author EmilioMP
  */
 public class CargasDB {
 

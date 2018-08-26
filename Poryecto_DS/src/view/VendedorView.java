@@ -20,7 +20,6 @@ import model.Venta;
 
 /**
  *
- * @author EmilioMP
  */
 public class VendedorView extends javax.swing.JFrame {
 

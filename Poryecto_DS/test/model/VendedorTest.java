@@ -12,7 +12,6 @@ import org.junit.Test;
 
 /**
  *
- * @author Ginger Jacome
  */
 public class VendedorTest extends TestCase{
     

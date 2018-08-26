@@ -11,7 +11,6 @@ import model.VendedorEditarVenta;
 
 /**
  *
- * @author EmilioMP
  */
 public class PanelEdicionVenta extends javax.swing.JPanel {
 

@@ -23,7 +23,6 @@ import model.Venta;
 
 /**
  *
- * @author EmilioMP
  */
 public class IngresosDB {
 

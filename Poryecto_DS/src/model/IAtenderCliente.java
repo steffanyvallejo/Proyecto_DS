@@ -4,7 +4,6 @@ import java.util.LinkedList;
 
 /**
  *
- * @author EmilioMP
  */
 
 public interface IAtenderCliente {

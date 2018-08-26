@@ -10,7 +10,6 @@ import model.Refrigeradora;
 
 /**
  *
- * @author EmilioMP
  */
 public class AdministradorView extends javax.swing.JFrame {
 

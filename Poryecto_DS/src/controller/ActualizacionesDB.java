@@ -8,7 +8,6 @@ import java.util.LinkedList;
 import javax.swing.JOptionPane;
 /**
  *
- * @author EmilioMP
  */
 public class ActualizacionesDB {
      private Connection conexion;

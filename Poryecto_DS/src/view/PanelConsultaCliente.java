@@ -5,7 +5,6 @@ import model.Empleado;
 
 /**
  *
- * @author EmilioMP
  */
 public class PanelConsultaCliente extends javax.swing.JPanel {
 

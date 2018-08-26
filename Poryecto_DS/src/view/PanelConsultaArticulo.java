@@ -6,7 +6,6 @@ import model.Empleado;
 
 /**
  *
- * @author EmilioMP
  */
 public class PanelConsultaArticulo extends javax.swing.JPanel {
 

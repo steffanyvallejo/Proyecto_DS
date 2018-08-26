@@ -11,7 +11,6 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Ginger Jacome
  */
 public class GerenteTest {
     
