@@ -5,17 +5,11 @@
  */
 package model;
 
-import java.util.Date;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author Ginger Jacome
  */
 public class VentaTest {
     
@@ -27,6 +21,7 @@ public class VentaTest {
      */
     @Test
     public void testCalcularValorTotalEquals() {
+        System.out.println("CalcularValorTotal");
         Venta instance = new Venta();
         instance.setSubtotal(400);
         double result = instance.calcularValorTotal();

@@ -8,12 +8,19 @@ public class Credito extends FormaPago implements PagoStrategy{
     public Credito() {
     }        
     
-    public Credito(String modo, int mesesDiferido) {      
-        this.modo = modo;
+    public Credito(int mesesDiferido) {      
+        this.modo = null;
         this.mesesDiferido = mesesDiferido;
     }
 
     public String getModo() {
+        if(this.mesesDiferido==0){
+            this.setModo("Pago Corriente");
+        }else if (mesesDiferido>0){
+            this.setModo("Pago Diferido");
+        }else{
+            this.setModo(null);
+        }
         return modo;
     }
 

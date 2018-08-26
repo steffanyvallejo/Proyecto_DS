@@ -708,7 +708,7 @@ public class VendedorView extends javax.swing.JFrame {
             if(modoCredito.equals("Pago diferido")){
                 mesesD = Integer.parseInt((String)jComboBox4.getSelectedItem());
             }            
-            Credito credito = new Credito(modoCredito, mesesD);
+            Credito credito = new Credito( mesesD);
             transaccion.realizarVenta(venta, vendedor, cedulaCliente, productosComprados, credito);            
         }else if(modo.equals("EFECTIVO")){
             Efectivo efectivo = new Efectivo();
