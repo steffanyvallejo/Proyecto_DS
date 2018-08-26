@@ -55,7 +55,6 @@ public class InicioFinal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.WHITE);
-        setMaximumSize(new java.awt.Dimension(446, 300));
         setMinimumSize(new java.awt.Dimension(446, 300));
         setResizable(false);
 
