@@ -15,7 +15,6 @@ public class CocinaInduccion extends Articulo {
 
     
     
-    
     @Override
     public void setDescripcion() {
         this.descripcion= "Numero de hornillas: "+numHornillas+", tiene horno: "+tieneHorno;

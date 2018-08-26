@@ -21,7 +21,7 @@ import model.Refrigeradora;
  */
 public class ActualizacionesDB {
      private Connection conexion;
-    
+     private PreparedStatement pst;
     
     public ActualizacionesDB(){        
         this.conexion = new ConexionDBM().establecerConexion(conexion);
@@ -31,7 +31,7 @@ public class ActualizacionesDB {
         LinkedList<String> datos = new LinkedList<>();
         try {
             System.out.println("entra al nombre");
-            PreparedStatement pst = conexion.prepareStatement("SELECT * FROM t_venta WHERE Venta_Cod = ?");           
+            pst = conexion.prepareStatement("SELECT * FROM t_venta WHERE Venta_Cod = ?");           
             pst.setString(1, codigo);
             ResultSet rs = pst.executeQuery();
             System.out.println("ejecucion del query");
@@ -48,22 +48,25 @@ public class ActualizacionesDB {
     
     public void actualizarVenta(String codigo, Double subtotal, Double total){
         try {
-            PreparedStatement pst = conexion.prepareStatement("UPDATE t_venta SET Venta_Subtotal = ?, Venta_Total = ? WHERE Venta_Cod = ?");
+            pst = conexion.prepareStatement("UPDATE t_venta SET Venta_Subtotal = ?, Venta_Total = ? WHERE Venta_Cod = ?");
             pst.setDouble(1, subtotal);
             pst.setDouble(2, total);
             pst.setString(3, codigo);            
             int res = pst.executeUpdate();
             if (res > 0) {
-                JOptionPane.showMessageDialog(null, "VENTA ACTUALIZADA EXITOSAMENTE!");
+                mostrarMensaje( "VENTA ACTUALIZADA EXITOSAMENTE!");
                 System.out.println("actv bien");
             } else {
-                JOptionPane.showMessageDialog(null, "VENTA NO ACTUALIZADA EXITOSAMENTE!");
+                mostrarMensaje( "VENTA NO ACTUALIZADA EXITOSAMENTE!");
                 System.out.println("actv mal");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "VENTA NO ACTUALIZADA EXITOSAMENTE!");
+            mostrarMensaje("VENTA NO ACTUALIZADA EXITOSAMENTE!");
             System.out.println("actv mal");
             System.out.println(ex.getMessage());
         }
+    }
+    public void mostrarMensaje(String cadena){
+        JOptionPane.showMessageDialog(null, cadena);
     }
 }

@@ -24,6 +24,7 @@ public class AdministradorFinal extends javax.swing.JFrame {
     private String categoriaArticulo;
     private Administrador administrador;
     private PanelConsultaArticulo panelCA;
+    ArticuloFactory factory = new ArticuloFactory();
             
 
     public AdministradorFinal(Administrador administrador) {
@@ -565,7 +566,7 @@ public class AdministradorFinal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         panel.setVisible(true);
         noEditar();
-        ArticuloFactory factory = new ArticuloFactory();
+        
         categoriaArticulo = (String) categoria.getSelectedItem();
         String color = (String) colores.getSelectedItem();
         float precio = Float.parseFloat(precio1.getText());

@@ -10,9 +10,6 @@ import java.util.*;
  */
 public class Gerente extends Empleado {
 
-    /**
-     * Default constructor
-     */
     
     private ConsultasDB consultas;
     private ReportesDB reportes;

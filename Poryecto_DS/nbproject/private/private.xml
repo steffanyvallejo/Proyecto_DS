@@ -12,31 +12,31 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/view/GerenteView.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Refrigeradora.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Cotizacion.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/controller/GerenteController.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/view/CotizacionView.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/controller/AdministradorController.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/controller/ConsultasDB.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Efectivo.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Bodega.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/ArticuloFactoryMethod.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Vendedor.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/view/GerenteFinal.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Atiende.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/controller/IngresosDB.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/ArticuloFactory.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/view/AdministradorView.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Solicita.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Venta.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/CocinaInduccion.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Cliente.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Administrador.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Lavadora.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/view/VendedorFinal.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/controller/ActualizacionesDB.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/view/AdministradorFinal.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Articulo.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/demo/Main.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/controller/CargasDB.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/controller/ConexionDBM.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Gerente.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/view/InicioFinal.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/view/PanelConsultar.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Subject.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/FormaPago.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/view/CotVentaView.java</file>
-            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/controller/TransaccionController.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Local.java</file>
+            <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Credito.java</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/login.png</file>
             <file>file:/C:/Proyecto_DS/Poryecto_DS/src/model/Empleado.java</file>
         </group>

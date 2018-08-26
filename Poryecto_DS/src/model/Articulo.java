@@ -21,7 +21,6 @@ public abstract class Articulo {
         this.modelo = modelo;
     }
 
-
     public Articulo(String modelo, String marca, String categoria, String color, float precio, int stock) {
         this.modelo = modelo;
         this.categoria = categoria;
@@ -32,11 +31,12 @@ public abstract class Articulo {
     }
 
     public abstract void setDescripcion();
-     public abstract String getDescripcion();
-    public abstract int getStock();
-    public abstract float getPrecio();
 
-   
+    public abstract String getDescripcion();
+
+    public abstract int getStock();
+
+    public abstract float getPrecio();
 
     public String getCategoria() {
         return categoria;
@@ -49,6 +49,5 @@ public abstract class Articulo {
     public String getColor() {
         return color;
     }
-    
 
 }
