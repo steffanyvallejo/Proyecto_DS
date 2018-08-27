@@ -35,7 +35,7 @@ public class CotizacionTest {
         instance.calcularTotal(listArticulos);
         float expResult=x.getPrecio()+y.getPrecio()+z.getPrecio();
         float result= instance.getTotal();
-        assertNotSame(expResult, result);
+        assertFalse(expResult!=result);
     }
 
     
