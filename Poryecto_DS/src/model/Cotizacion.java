@@ -1,5 +1,6 @@
 package model;
 
+import model.FactoryMethod.Articulo;
 import java.text.SimpleDateFormat;
 import java.util.*;
 

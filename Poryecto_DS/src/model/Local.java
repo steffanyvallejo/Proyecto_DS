@@ -1,5 +1,6 @@
 package model;
 
+import model.FactoryMethod.Articulo;
 import java.util.LinkedList;
 
 public class Local {

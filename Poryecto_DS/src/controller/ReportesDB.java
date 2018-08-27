@@ -22,8 +22,8 @@ import java.util.logging.Logger;
 public class ReportesDB {
 
     private Connection conexion;
-    LinkedList<LinkedList<String>> datosRep;
-    LinkedList<String> fechas;
+    private LinkedList<LinkedList<String>> datosRep;
+    private LinkedList<String> fechas;
 
     public ReportesDB() {
         this.conexion = new ConexionDBM().establecerConexion(conexion);

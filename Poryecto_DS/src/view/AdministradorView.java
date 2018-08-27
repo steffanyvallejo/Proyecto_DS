@@ -2,11 +2,11 @@ package view;
 
 import java.awt.Color;
 import model.Administrador;
-import model.Articulo;
-import model.ArticuloFactory;
-import model.CocinaInduccion;
-import model.Lavadora;
-import model.Refrigeradora;
+import model.FactoryMethod.Articulo;
+import model.FactoryMethod.ArticuloFactory;
+import model.FactoryMethod.CocinaInduccion;
+import model.FactoryMethod.Lavadora;
+import model.FactoryMethod.Refrigeradora;
 
 /**
  *

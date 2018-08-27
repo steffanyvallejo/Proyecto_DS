@@ -1,5 +1,6 @@
 package model;
 
+import model.Strategy.FormaPago;
 import java.text.SimpleDateFormat;
 import java.util.*;
 

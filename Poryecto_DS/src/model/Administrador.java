@@ -1,12 +1,15 @@
 package model;
 
+import model.FactoryMethod.Articulo;
+import model.Observer.PeticionPermiso;
+import model.ChainOfResponsability.Transaccion;
 import controller.ConsultasDB;
 import controller.IngresosDB;
 import java.util.LinkedList;
 
 public class Administrador extends Empleado implements PeticionPermiso{
-    IngresosDB ingreso;
-    ConsultasDB consultas;
+    private IngresosDB ingreso;
+    private ConsultasDB consultas;
     
     public Administrador() {
         ingreso = new IngresosDB();

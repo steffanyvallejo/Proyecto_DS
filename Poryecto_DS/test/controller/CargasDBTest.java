@@ -6,7 +6,7 @@
 package controller;
 
 import java.util.LinkedList;
-import model.Articulo;
+import model.FactoryMethod.Articulo;
 import model.Empleado;
 import org.junit.Test;
 import static org.junit.Assert.*;

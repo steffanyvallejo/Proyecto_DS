@@ -5,6 +5,10 @@
  */
 package model;
 
+import model.FactoryMethod.CocinaInduccion;
+import model.FactoryMethod.Refrigeradora;
+import model.FactoryMethod.Lavadora;
+import model.FactoryMethod.Articulo;
 import java.util.LinkedList;
 import org.junit.Test;
 import static org.junit.Assert.*;

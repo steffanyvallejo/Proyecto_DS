@@ -8,14 +8,14 @@ import java.util.LinkedList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import model.Administrador;
-import model.Articulo;
+import model.FactoryMethod.Articulo;
 import model.Cliente;
-import model.Credito;
-import model.Efectivo;
-import model.NotificacionPeticion;
-import model.Transaccion;
+import model.Strategy.Credito;
+import model.Strategy.Efectivo;
+import model.Observer.NotificacionPeticion;
+import model.ChainOfResponsability.Transaccion;
 import model.Vendedor;
-import model.VendedorEditarVenta;
+import model.Decorator.VendedorEditarVenta;
 import model.Venta;
 
 /**

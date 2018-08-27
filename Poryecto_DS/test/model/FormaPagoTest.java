@@ -5,6 +5,7 @@
  */
 package model;
 
+import model.Strategy.FormaPago;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

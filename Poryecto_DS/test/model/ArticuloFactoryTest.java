@@ -5,6 +5,8 @@
  */
 package model;
 
+import model.FactoryMethod.ArticuloFactory;
+import model.FactoryMethod.Articulo;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

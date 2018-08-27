@@ -1,5 +1,9 @@
 package model;
 
+import model.FactoryMethod.Articulo;
+import model.Observer.NotificacionPeticion;
+import model.ChainOfResponsability.IAtenderCliente;
+import model.Strategy.FormaPago;
 import controller.ConsultasDB;
 import controller.IngresosDB;
 import java.util.LinkedList;

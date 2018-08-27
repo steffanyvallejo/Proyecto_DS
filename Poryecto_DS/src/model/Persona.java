@@ -8,7 +8,7 @@ public abstract class Persona {
     protected String apellido;
     protected Date fechaNacimiento;
     protected String numeroTelefonico;
-    protected String direcciónDomicilio;
+    protected String direccionDomicilio;
     protected String correoElectronico;
     protected String cedula;
 
@@ -20,7 +20,7 @@ public abstract class Persona {
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.numeroTelefonico = numeroTelefonico;
-        this.direcciónDomicilio = direcciónDomicilio;
+        this.direccionDomicilio = direcciónDomicilio;
         this.correoElectronico = correoElectronico;
         this.cedula = cedula;
     }
@@ -65,12 +65,12 @@ public abstract class Persona {
         this.numeroTelefonico = numeroTelefonico;
     }
 
-    public String getDirecciónDomicilio() {
-        return direcciónDomicilio;
+    public String getDireccionDomicilio() {
+        return direccionDomicilio;
     }
 
-    public void setDirecciónDomicilio(String direcciónDomicilio) {
-        this.direcciónDomicilio = direcciónDomicilio;
+    public void setDireccionDomicilio(String direccionDomicilio) {
+        this.direccionDomicilio = direccionDomicilio;
     }
 
     public String getCorreoElectronico() {

@@ -13,11 +13,11 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
-import model.Articulo;
+import model.FactoryMethod.Articulo;
 import model.Cliente;
-import model.Credito;
-import model.Efectivo;
-import model.FormaPago;
+import model.Strategy.Credito;
+import model.Strategy.Efectivo;
+import model.Strategy.FormaPago;
 import model.Vendedor;
 import model.Venta;
 
@@ -38,7 +38,7 @@ public class IngresosDB {
             pst.setString(1, cliente.getCedula());
             pst.setString(2, cliente.getNombre());
             pst.setString(3, cliente.getApellido());
-            pst.setString(4, cliente.getDirecciónDomicilio());
+            pst.setString(4, cliente.getDireccionDomicilio());
             pst.setString(5, cliente.getNumeroTelefonico());
             pst.setString(6, cliente.getCorreoElectronico());
             pst.setDate(7, Date.valueOf(new SimpleDateFormat("yyyy-MM-dd").format(cliente.getFechaNacimiento())));
@@ -230,8 +230,7 @@ public class IngresosDB {
         }
     }
 
-    public void agregarArticuloDB(Articulo articulo) {
-        int idArt = getIDArt(articulo.getModelo());
+    public void agregarArticuloDB(Articulo articulo) {        
         try {
             PreparedStatement pst = conexion.prepareStatement("INSERT INTO t_articulo (Art_Modelo, Art_Descripcion,Art_Precio, Art_Stock,Art_Categ, Art_Marca, Art_Color) VALUES (?,?,?,?,?,?,?)");
             pst.setString(1, articulo.getModelo());

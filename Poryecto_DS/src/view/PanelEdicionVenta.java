@@ -7,7 +7,7 @@ package view;
 
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
-import model.VendedorEditarVenta;
+import model.Decorator.VendedorEditarVenta;
 
 /**
  *

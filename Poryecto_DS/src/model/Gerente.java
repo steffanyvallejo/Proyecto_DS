@@ -1,5 +1,6 @@
 package model;
 
+import model.ChainOfResponsability.Transaccion;
 import controller.ConsultasDB;
 import controller.ReportesDB;
 import java.util.*;
@@ -33,11 +34,6 @@ public class Gerente extends Empleado {
     public boolean consultaTransaccion(Transaccion t) {
         // TODO implement here
         return false;
-    }
-
-    public LinkedList<Transaccion> generarReporte() {
-        // TODO implement here
-        return null;
     }
     
     public LinkedList<LinkedList<String>> generarReporteVendedor(){        

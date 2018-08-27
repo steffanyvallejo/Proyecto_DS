@@ -13,12 +13,12 @@ import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Administrador;
-import model.Articulo;
-import model.CocinaInduccion;
+import model.FactoryMethod.Articulo;
+import model.FactoryMethod.CocinaInduccion;
 import model.Empleado;
 import model.Gerente;
-import model.Lavadora;
-import model.Refrigeradora;
+import model.FactoryMethod.Lavadora;
+import model.FactoryMethod.Refrigeradora;
 import model.Vendedor;
 
 /**
@@ -70,7 +70,7 @@ public class CargasDB {
             emp.setApellido(resultados.getString("apellido"));
             emp.setFechaNacimiento(resultados.getDate("fecha_nacimiento"));
             emp.setNumeroTelefonico(resultados.getString("telefono"));
-            emp.setDirecciónDomicilio(resultados.getString("direccion"));
+            emp.setDireccionDomicilio(resultados.getString("direccion"));
             emp.setCorreoElectronico(resultados.getString("correo"));
             emp.setUsuario(resultados.getString("usuario"));
             emp.setContraseña(resultados.getString("pass"));
