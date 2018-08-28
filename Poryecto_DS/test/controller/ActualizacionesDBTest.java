@@ -25,9 +25,8 @@ public class ActualizacionesDBTest {
         System.out.println("datosActualizarVenta");
         String codigo = "";
         ActualizacionesDB instance = new ActualizacionesDB();
-        LinkedList<String> expResult = null;
         LinkedList<String> result = instance.datosActualizarVenta(codigo);
-        assertEquals(expResult, result);
+        assertTrue( result.isEmpty());
     }
 
     /**
