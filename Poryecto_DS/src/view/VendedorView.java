@@ -48,6 +48,7 @@ public class VendedorView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         jTabbedPane1.addTab("CONSULTA DE PRODUCTOS", panelCA);        
         jTabbedPane2.addTab("CONSULTAR", panelCC);
+        jTabbedPane3.setEnabledAt(jTabbedPane3.indexOfTab("COTIZACION"), false);
     }
 
     /**

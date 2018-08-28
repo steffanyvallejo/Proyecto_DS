@@ -24,6 +24,8 @@ public class GerenteView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);        
         jTabbedPane3.addTab("PRODUCTOS", panelCA); 
         jTabbedPane3.addTab("CLIENTE", panelCC);
+        jTabbedPane3.setEnabledAt(jTabbedPane3.indexOfTab("TRANSACCION"), false);
+        jTabbedPane2.setEnabledAt(jTabbedPane2.indexOfTab("CLIENTE"), false);
     }
 
     /**

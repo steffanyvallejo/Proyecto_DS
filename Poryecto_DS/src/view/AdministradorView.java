@@ -28,6 +28,10 @@ public class AdministradorView extends javax.swing.JFrame {
         this.setTitle("ADMINISTRADOR");
         this.setLocationRelativeTo(null);        
         jTabbedPane3.addTab("CONSULTAR", panelCA);
+        jTabbedPane1.setEnabledAt(jTabbedPane1.indexOfTab("MENU DE USUARIO"), false);
+        jTabbedPane1.setEnabledAt(jTabbedPane1.indexOfTab("MENU DE VENTAS"), false);
+        jTabbedPane3.setEnabledAt(jTabbedPane3.indexOfTab("ACTUALIZAR"), false);
+        jTabbedPane3.setEnabledAt(jTabbedPane3.indexOfTab("ELIMINAR"), false);
     }
 
     /**
